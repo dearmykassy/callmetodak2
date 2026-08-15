@@ -98,7 +98,7 @@ test("regional metadata and body obey the five-keyword, uniqueness, and operatin
     ...document.principles.map((principle) => `${principle.title} ${principle.description}`),
     ...document.faqs.map((faq) => `${faq.question} ${faq.answer}`),
   ].join("\n"))).size, 104);
-  assert.equal(operatingFacts.courses.flatMap((course) => course.items).length, 14);
+  assert.equal(operatingFacts.courses.flatMap((course) => course.items).length, 12);
   assert.equal(operatingFacts.cardPayment, "현장 카드 결제 가능");
   assert.deepEqual(materialization, {
     source: "massagebom-live-canonical-generators",
@@ -116,13 +116,18 @@ test("regional metadata and body obey the five-keyword, uniqueness, and operatin
       `${region.keywordBase}출장안마`,
       `${region.keywordBase}출장마사지`,
     ]);
-    assert.match(document.title, new RegExp(region.keywordBase, "u"));
+    assert.equal(
+      document.title,
+      `${region.keywordBase}토닥이 ${region.keywordBase}여성전용마사지 | ${region.keywordBase}여성전용출장마사지 · 콜미토닥이`,
+    );
     assert.match(document.h1, new RegExp(region.label, "u"));
 
     const body = JSON.stringify(document);
     assert.ok(document.principles.some((principle) => principle.title === "현장 카드 결제 가능"));
     assert.ok(document.faqs.some((faq) => faq.answer === "현장 카드 결제 가능"));
     assert.doesNotMatch(body, /마사지봄|스타토닥이|마사지러브|후기|평점|도착|관리사|경력|배정|효능|방문|자택|홈케어|365일|연중무휴|일회용|소독/u);
+    const forbiddenMaleTerm = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
+    assert.doesNotMatch(body, new RegExp(forbiddenMaleTerm, "u"));
   }
 
   const suwon = documents.find((document) => document.route === "/areas/gyeonggi/수원시");
@@ -142,6 +147,7 @@ test("regional runtime has no cross-repository dependency and uses the requested
   assert.match(page, /dynamicParams = false/u);
   assert.match(page, /generateStaticParams/u);
   assert.match(page, /generateMetadata/u);
+  assert.match(page, /title: \{ absolute: content\.title \}/u);
   assert.match(page, /keywords: content\.keywords/u);
   assert.match(page, /alternates: \{ canonical: region\.route \}/u);
   assert.match(page, /robots: \{ index: true, follow: true \}/u);

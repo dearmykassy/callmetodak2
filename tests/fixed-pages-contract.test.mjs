@@ -21,10 +21,12 @@ test("fixed pages retain the locked Callme operating facts", async () => {
     assert.match(areas, new RegExp(`name: "${name}", route: "${route}"`, "u"));
   }
   assert.match(areas, /동·읍·면·군 페이지는 만들지 않습니다/);
-  assert.equal((pricing.match(/\["60분"|\["90분"|\["120분"/g) ?? []).length, 14);
+  assert.equal((pricing.match(/\["60분"|\["90분"|\["120분"/g) ?? []).length, 12);
   assert.match(pricing, /선입금 없는 100% 현장 후불/);
   assert.match(guide, /24시간 전화상담/);
   assert.match(guide, /현장 카드 결제 가능/);
   assert.match(notice, /선입금을 요청하지 않습니다/);
   assert.doesNotMatch(`${areas}${pricing}${guide}${notice}`, /후기|평점|도착 시간|관리사|경력/);
+  const forbiddenMaleTerm = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
+  assert.doesNotMatch(`${areas}${pricing}${guide}${notice}`, new RegExp(forbiddenMaleTerm, "u"));
 });

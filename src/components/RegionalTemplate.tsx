@@ -27,6 +27,15 @@ const consultationSteps = [
   ["03", "코스", "확보한 시간에 맞춰 코스와 가격을 비교합니다."],
 ] as const;
 
+function renderHeroTitle(title: string) {
+  const keyword = "여성전용출장마사지";
+  const [prefix, suffix] = title.split(keyword);
+
+  if (suffix === undefined) return title;
+
+  return <>{prefix}여성전용<wbr />출장마사지{suffix}</>;
+}
+
 export function RegionalTemplate({ region, content, childRegions, nearby }: RegionalTemplateProps) {
   const breadcrumbs = getBreadcrumbs(region);
   const heroImage = getRegionalHeroImage(region.route);
@@ -71,7 +80,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
                 : <Link key={crumb.id} href={crumb.route}>{crumb.label}</Link>)}
             </nav>
             <p className={styles.kicker}>{content.hero.eyebrow}</p>
-            <h1 id="region-title">{content.h1}</h1>
+            <h1 id="region-title">{renderHeroTitle(content.h1)}</h1>
             <p className={styles.heroLead}>{content.hero.lead}</p>
             <div className={styles.heroActions}>
               <a className={styles.primaryButton} href={OPERATING_FACTS.phone.href}>전화상담 <span aria-hidden="true">↗</span></a>

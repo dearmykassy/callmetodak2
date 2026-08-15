@@ -7,6 +7,16 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT_DIR = path.join(ROOT, "out");
 const SITE_URL = "https://callmetodak2.kr";
 const fixedRoutes = ["/", "/areas", "/pricing", "/guide", "/notice", "/blog"];
+const HOME_METADATA_TITLE = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
+const HOME_METADATA_KEYWORDS = [
+  "토닥이",
+  "여성전용마사지",
+  "여성전용출장마사지",
+  "수도권 여성전용출장마사지",
+  "지역별 여성전용마사지",
+  "24시간 전화상담",
+];
+const FORBIDDEN_MALE_TERM = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
 
 const normalizeRoute = (route) => {
   const decodedRoute = decodeURIComponent(route);
@@ -48,13 +58,17 @@ async function listFiles(directory) {
   return descendants.flat();
 }
 
-const [regionsSnapshot, blogSnapshot, imageRelease] = await Promise.all([
+const [regionsSnapshot, blogSnapshot, imageRelease, regionalContentSnapshot] = await Promise.all([
   readJson("src/data/regions.generated.json"),
   readJson("src/data/blog.generated.json"),
   readJson("src/data/image-release.generated.json"),
+  readJson("src/data/region-content.generated.json"),
 ]);
 const blogRoutes = blogSnapshot.posts.map((post) => `/blog/${post.slug}`);
 const regionalRoutes = regionsSnapshot.regions.map((region) => region.route);
+const regionalContentByRoute = new Map(
+  regionalContentSnapshot.documents.map((document) => [document.route, document]),
+);
 const expectedRoutes = [...fixedRoutes, ...blogRoutes, ...regionalRoutes];
 
 assert.equal(expectedRoutes.length, 112, "The release must expose 112 public URLs");
@@ -80,8 +94,10 @@ for (const route of expectedRoutes) {
   const pagePath = outputPathForRoute(route);
   await assertRegularFile(pagePath);
   const html = await readFile(pagePath, "utf8");
+  const title = metadataValue(html, /<title>([^<]+)<\/title>/u, `title metadata for ${route}`);
 
   assert.doesNotMatch(html, /placeholder\.callme-todaki\.local|noindex|nofollow/u);
+  assert.doesNotMatch(html, new RegExp(FORBIDDEN_MALE_TERM, "u"));
   assertRouteMatches(
     metadataValue(html, /<link rel="canonical" href="([^"]+)"/u, `canonical metadata for ${route}`),
     route,
@@ -94,6 +110,27 @@ for (const route of expectedRoutes) {
   );
   assert.ok(html.includes('name="twitter:title"'), `Missing Twitter title for ${route}`);
   assert.ok(html.includes('name="twitter:description"'), `Missing Twitter description for ${route}`);
+
+  if (route === "/") {
+    assert.equal(title, HOME_METADATA_TITLE, "Home title must lead with the approved core keywords");
+    const homeKeywords = metadataValue(
+      html,
+      /<meta name="keywords" content="([^"]+)"/u,
+      "home keywords metadata",
+    ).split(",");
+    assert.deepEqual(homeKeywords, HOME_METADATA_KEYWORDS, "Home keywords must preserve the approved order");
+  }
+
+  const regionalContent = regionalContentByRoute.get(route);
+  if (regionalContent) {
+    assert.equal(title, regionalContent.title, `Regional title must not receive the layout suffix twice: ${route}`);
+    const regionalKeywords = metadataValue(
+      html,
+      /<meta name="keywords" content="([^"]+)"/u,
+      `regional keywords metadata for ${route}`,
+    ).split(",");
+    assert.deepEqual(regionalKeywords, regionalContent.keywords, `Regional keyword order must match the snapshot: ${route}`);
+  }
 
   for (const match of html.matchAll(/<meta name="twitter:image" content="([^"]+)"/gu)) {
     assert.equal(new URL(match[1]).origin, SITE_URL, `Twitter image for ${route} must use production domain`);

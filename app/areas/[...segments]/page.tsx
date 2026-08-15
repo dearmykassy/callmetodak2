@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
   const content = getRegionContent(region.id);
   const socialImage = getSocialImage(getRegionalHeroImage(region.route), content.h1);
   return {
-    title: content.title,
+    title: { absolute: content.title },
     description: content.description,
     keywords: content.keywords,
     alternates: { canonical: region.route },

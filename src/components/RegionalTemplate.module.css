@@ -325,3 +325,48 @@
   .facts { grid-template-columns: 1fr; gap: 9px; }
   .facts > div + div { padding-left: 0; border-left: 0; }
 }
+
+/* The regional hero is deliberately denser on phones: every route, including
+   the longest city/gu titles, keeps its copy and actions inside the image. */
+@media (max-width: 640px) {
+  .page { padding-bottom: 84px; }
+  .topbar { min-height: 58px; padding: 8px 12px; gap: 8px; }
+  .brand { gap: 7px; font-size: 13px; white-space: nowrap; }
+  .brandMark { width: 30px; height: 30px; border-radius: 9px; }
+  .headerLinks { flex: 0 1 auto; min-width: 0; gap: 4px; }
+  .headerNotice,
+  .headerBlog,
+  .headerCall { min-height: 36px; padding: 0 7px; gap: 4px; font-size: 9px; white-space: nowrap; }
+  .headerCall span { font-size: 13px; }
+
+  .hero { min-height: 520px; }
+  .hero::after { inset: 12px; }
+  .heroInner,
+  .content { width: min(100% - 28px, 1180px); }
+  .heroInner { min-height: 520px; padding: 22px 0 32px; }
+  .breadcrumbs { max-width: 100%; gap: 4px; font-size: 9px; line-height: 1.4; }
+  .breadcrumbs > * + *::before { margin-right: 4px; }
+  .kicker { font-size: 8px; letter-spacing: .14em; }
+  .hero h1 { max-width: 100%; margin-top: 7px; font-size: clamp(31px, 9.8vw, 37px); line-height: 1.06; letter-spacing: -.07em; overflow-wrap: normal; word-break: keep-all; text-wrap: balance; }
+  .heroLead { max-width: 100%; margin-top: 14px; font-size: clamp(12px, 3.6vw, 14px); line-height: 1.65; }
+  .heroActions { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+  .primaryButton,
+  .secondaryButton { min-width: 0; min-height: 48px; padding: 0 8px; gap: 6px; font-size: 11px; white-space: nowrap; }
+  .primaryButton span,
+  .secondaryButton span { font-size: 14px; }
+  .facts { width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 16px 0 0; margin: 20px 0 0; }
+  .facts > div { padding: 0 4px; }
+  .facts > div + div { padding-left: 4px; border-left: 1px solid #f3d87d35; }
+  .facts dt { font-size: 8px; letter-spacing: .08em; }
+  .facts dd { margin-top: 5px; font-size: clamp(8px, 2.75vw, 10px); line-height: 1.35; white-space: nowrap; }
+}
+
+@media (max-width: 360px) {
+  .topbar { padding-inline: 10px; gap: 6px; }
+  .headerLinks { gap: 3px; }
+  .headerNotice,
+  .headerBlog,
+  .headerCall { padding-inline: 6px; font-size: 8.5px; }
+  .hero h1 { font-size: clamp(29px, 9.6vw, 33px); }
+  .heroActions { grid-template-columns: 1fr; }
+}

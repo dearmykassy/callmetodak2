@@ -47,7 +47,6 @@ const OPERATING_FACTS = {
     { name: "아로마", items: [[60, 90000], [90, 110000], [120, 130000]] },
     { name: "힐링", items: [[60, 100000], [90, 120000], [120, 140000]] },
     { name: "스페셜", items: [[60, 110000], [90, 130000], [120, 150000]] },
-    { name: "남성전용", items: [[60, 120000], [90, 150000]] },
   ],
 };
 
@@ -113,6 +112,7 @@ const SOURCE_ROOT_LABELS = {
 const UNSUPPORTED_COPY = /관리사|도착|배정|방문|자택|홈케어|고객이\s*머무는\s*공간|집에서|집이라는|공간|이동|외출|매장|현장\s*진행|2인|두\s*명|동시\s*관리|커플|부부|일회용|소독|위생|365일|연중무휴|하루\s*종일|새벽|치료|회복|효능|건강|의료|테라피|출발비|출발금|보증금|송금|입금|환불|사칭|sns|후기|평점|경력|수면|압|강도|몸|피로|긴장|이완|컨디션|근육|호흡|뻐근|가벼워|움직임|스트레칭|오일|150분/iu;
 const OUTPUT_UNSUPPORTED_COPY = /관리사|도착|배정|방문|자택|홈케어|고객이\s*머무는\s*공간|집에서|집이라는|공간|이동|외출|매장|현장\s*진행|2인|두\s*명|동시\s*관리|커플|부부|일회용|소독|위생|365일|연중무휴|하루\s*종일|새벽|치료|회복|효능|건강|의료|테라피|출발비|출발금|보증금|송금|환불|사칭|sns|후기|평점|경력|수면|압|강도|몸|피로|긴장|이완|컨디션|근육|호흡|뻐근|가벼워|움직임|스트레칭|오일|150분/iu;
 const BRAND_LEAK = /마사지봄|스타토닥이|마사지러브/iu;
+const FORBIDDEN_MALE_TERM = /\uB0A8\uC131\uC804\uC6A9/u;
 
 const compact = (value) => value.normalize("NFC").replace(/\s+/gu, "");
 const cityStem = (value) => value.endsWith("시") ? value.slice(0, -1) : value;
@@ -394,7 +394,7 @@ function splitSentences(text) {
 }
 
 function isSupportedCopy(text) {
-  return !UNSUPPORTED_COPY.test(text) && !BRAND_LEAK.test(text);
+  return !UNSUPPORTED_COPY.test(text) && !BRAND_LEAK.test(text) && !FORBIDDEN_MALE_TERM.test(text);
 }
 
 function adaptedSentences(input, source, region, slot) {
@@ -409,7 +409,9 @@ function keywordSet(region) {
 
 function metadataFor(region, keywords, sourceLead) {
   return {
-    title: `${keywords[0]} | ${region.label} 여성전용출장마사지 | ${BRAND}`,
+    // Mirrors MassageBom's canonical structure:
+    // primary keyword + secondary keyword | service identity · platform brand.
+    title: `${keywords[0]} ${keywords[1]} | ${keywords[2]} · ${BRAND}`,
     description: `${keywords[1]} 안내입니다. ${sourceLead}`,
     h1: `${region.label} 여성전용출장마사지 안내`,
   };
@@ -631,6 +633,9 @@ function buildContent(regions, massageBomSources) {
 
 function assertDocumentSafety(document, region, source) {
   const serialized = JSON.stringify(document);
+  if (FORBIDDEN_MALE_TERM.test(serialized)) {
+    throw new Error(`FORBIDDEN_MALE_TERM:${document.route}`);
+  }
   const unsupportedMatch = serialized.match(OUTPUT_UNSUPPORTED_COPY);
   if (unsupportedMatch) throw new Error(`UNSUPPORTED_COPY:${document.route}:${unsupportedMatch[0]}`);
   if (BRAND_LEAK.test(serialized)) throw new Error(`BRAND_LEAK:${document.route}`);

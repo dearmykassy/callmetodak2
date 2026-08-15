@@ -70,3 +70,12 @@
   .hero.hero-with-image .hero-content-copy-left,
   .hero.hero-with-image .hero-content-copy-right { max-width: calc(100% - 40px); }
 }
+
+@media (max-width: 640px) {
+  .hero.hero-with-image .hero-content-copy-left,
+  .hero.hero-with-image .hero-content-copy-right {
+    right: 18px;
+    left: 18px;
+    max-width: none;
+  }
+}
