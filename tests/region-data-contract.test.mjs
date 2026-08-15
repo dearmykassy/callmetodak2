@@ -98,7 +98,9 @@ test("regional metadata and body obey the five-keyword, uniqueness, and operatin
     ...document.principles.map((principle) => `${principle.title} ${principle.description}`),
     ...document.faqs.map((faq) => `${faq.question} ${faq.answer}`),
   ].join("\n"))).size, 104);
-  assert.equal(operatingFacts.courses.flatMap((course) => course.items).length, 12);
+  assert.deepEqual(operatingFacts.courses, [
+    { name: "센슈얼 감성 테라피", items: [[60, 120000], [90, 150000], [120, 180000]] },
+  ]);
   assert.equal(operatingFacts.cardPayment, "현장 카드 결제 가능");
   assert.deepEqual(materialization, {
     source: "massagebom-live-canonical-generators",
@@ -156,11 +158,20 @@ test("regional runtime has no cross-repository dependency and uses the requested
   assert.match(template, /DIRECTORY/u);
   assert.match(template, /CALL PREP/u);
   assert.match(template, /LOCAL INTRO/u);
-  assert.match(template, /COURSE &amp; PRICE/u);
+  assert.match(template, /TODAKI SIGNATURE COURSE/u);
   assert.match(template, /OPERATING PRINCIPLES/u);
   assert.match(template, /FAQ/u);
   assert.match(template, /NEARBY GUIDE/u);
   assert.match(template, /전화상담/u);
+  assert.match(template, /singleCourseCard/u);
+  const priceSectionIndex = template.indexOf("className={styles.priceSection}");
+  const principlesSectionIndex = template.indexOf("className={styles.principles}");
+  const nearbySectionIndex = template.indexOf("className={styles.nearby}");
+  const directorySectionIndex = template.indexOf("className={styles.directory}");
+  const calloutSectionIndex = template.indexOf("className={styles.callout}");
+  assert.ok(priceSectionIndex < principlesSectionIndex, "the signature price board must retain its information-flow position");
+  assert.ok(nearbySectionIndex < directorySectionIndex, "regional card directories must be the final content section");
+  assert.ok(directorySectionIndex < calloutSectionIndex, "regional card directories must remain before the closing CTA");
   assert.match(template, /getRegionalHeroImage/u);
   assert.match(template, /<picture\b/u);
   assert.match(template, /type="image\/webp"/u);

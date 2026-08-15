@@ -4,9 +4,15 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
+const readJson = async (path) => JSON.parse(await read(path));
 
 test("Callme Todaki home carries the approved operating slice", async () => {
-  const [page, layout, packageJson] = await Promise.all([read("app/page.tsx"), read("app/layout.tsx"), read("package.json")]);
+  const [page, layout, packageJson, regions] = await Promise.all([
+    read("app/page.tsx"),
+    read("app/layout.tsx"),
+    read("package.json"),
+    readJson("src/data/regions.generated.json"),
+  ]);
   assert.match(packageJson, /"name": "callme-todaki"/);
   const homeTitle = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
   const coreKeywords = ["토닥이", "여성전용마사지", "여성전용출장마사지"];
@@ -44,7 +50,18 @@ test("Callme Todaki home carries the approved operating slice", async () => {
     assert.ok(page.includes(question));
     assert.ok(page.includes(answer));
   }
-  assert.equal((page.match(/\["60분"|\["90분"|\["120분"/g) ?? []).length, 12);
+  assert.deepEqual(regions.operatingFacts.courses, [
+    { name: "센슈얼 감성 테라피", items: [[60, 120000], [90, 150000], [120, 180000]] },
+  ]);
+  assert.match(page, /OPERATING_FACTS\.courses/u);
+  assert.match(page, /single-course-card/u);
+  const priceSectionIndex = page.indexOf('className="menu-section" id="pricing"');
+  const faqSectionIndex = page.indexOf('className="faq-section" id="faq"');
+  const areaSectionIndex = page.indexOf('className="copy-section intro-section" id="areas"');
+  const footerIndex = page.indexOf('className="footer"');
+  assert.ok(priceSectionIndex < faqSectionIndex, "the signature price board must retain its main information-flow position");
+  assert.ok(faqSectionIndex < areaSectionIndex, "the home region cards must be the final content section");
+  assert.ok(areaSectionIndex < footerIndex, "the home region cards must remain before the footer");
   const forbiddenMaleTerm = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
   assert.doesNotMatch(`${page}\n${layout}`, new RegExp(forbiddenMaleTerm, "u"));
   assert.doesNotMatch(page, /hero\.webp|care\.webp|후기|평점/);

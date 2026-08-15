@@ -1,1 +1,28 @@
 .page{min-height:100vh;padding:6px 6px 48px;background:var(--black)}.shell{max-width:1120px;min-height:100vh;margin:auto;overflow:hidden;border:1px solid #6f343d;border-radius:18px 18px 8px 8px;background:var(--wine);box-shadow:0 28px 90px #0008}.head{padding:52px clamp(20px,5vw,58px) 38px;border-bottom:1px solid #70384080;background:radial-gradient(circle at 88% 15%,#d8ac423b,transparent 24%),linear-gradient(130deg,#18090d,#351019)}.eyebrow{color:var(--light);font-size:10px;font-weight:850;letter-spacing:.18em}.head h1{max-width:740px;margin:14px 0 0;font-size:clamp(34px,5vw,58px);line-height:.98;letter-spacing:-.065em}.head p{max-width:650px;margin:20px 0 0;color:var(--muted);font-size:14px;line-height:1.8}.content{padding:20px clamp(20px,5vw,58px) 54px}.section{padding:36px 0;border-bottom:1px solid #672d3785}.section:last-child{border:0}.section h2{margin:8px 0 0;color:var(--light);font-size:22px;letter-spacing:-.04em}.section p{color:var(--muted);font-size:13px;line-height:1.9}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.card{min-height:128px;padding:20px;border:1px solid #a46e2452;border-radius:14px;background:linear-gradient(145deg,#30181d,#220f13)}.card strong{display:block;color:var(--cream);font-size:17px}.card span{display:block;margin-top:12px;color:var(--light);font-size:10px;font-weight:800}.table{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.price{padding:20px;border:1px solid #a46e2452;border-radius:14px;background:#2c171c}.price h3{margin:0;color:var(--cream);font-size:16px}.price ul{padding:0;margin:15px 0 0;list-style:none}.price li{display:flex;justify-content:space-between;min-height:36px;border-top:1px solid #70384080;color:var(--muted);font-size:12px}.price b{color:var(--light)}.notice{padding:25px;border:1px solid #dfb4454a;border-radius:14px;background:linear-gradient(100deg,#3a1d1a,#211015)}.notice strong{display:block;color:var(--light);font-size:20px}.notice p{margin:12px 0 0}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:25px}.steps article{min-height:142px;padding:8px 18px;border-left:1px solid #6f343da3}.steps article:last-child{border-right:1px solid #6f343da3}.steps span{display:grid;width:38px;height:38px;place-items:center;border:1px solid #e0b84c70;border-radius:50%;color:var(--light);font-size:10px;font-weight:900}.steps h3{margin:18px 0 7px;font-size:15px}.steps p{margin:0}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:54px;margin-top:24px;padding:0 24px;border-radius:13px;color:#1d0c10;background:linear-gradient(105deg,#b68318,#e5bd43 50%,#f0d476);font-size:13px;font-weight:900}@media(max-width:720px){.cards,.table{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.steps article:nth-child(3){border-left:0}.steps article:nth-child(2){border-right:1px solid #6f343da3}.steps article:last-child{border-right:0}}@media(max-width:430px){.page{padding:3px}.head{padding:40px 20px 30px}.content{padding:12px 20px 42px}.cards,.table{grid-template-columns:1fr}.steps article{padding:8px 12px}.head h1{font-size:36px}}
+
+.singleCourseTable { grid-template-columns: minmax(0, 1fr); }
+.singleCoursePrice {
+  min-height: 270px;
+  display: grid;
+  grid-template-columns: minmax(220px, .78fr) minmax(0, 1.55fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(28px, 4vw, 46px);
+  background: radial-gradient(circle at 88% 0%, #e5bd4330, transparent 28%), linear-gradient(135deg, #35171e, #1c0b10);
+}
+.singleCoursePrice h3 { align-self: center; font-size: clamp(30px, 4vw, 47px); line-height: 1.08; letter-spacing: -.06em; }
+.singleCoursePrice ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: stretch; margin: 0; }
+.singleCoursePrice li { min-width: 0; min-height: 150px; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border-top: 0; border-left: 1px solid #b7893d59; font-size: 14px; }
+.singleCoursePrice li:first-child { border-left: 0; }
+.singleCoursePrice b { font-size: clamp(20px, 2.6vw, 29px); letter-spacing: -.035em; }
+
+@media(max-width:720px){
+  .singleCourseTable{grid-template-columns:minmax(0,1fr)}
+  .singleCoursePrice{min-height:0;grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 22px}
+  .singleCoursePrice h3{font-size:31px}
+  .singleCoursePrice li{min-height:105px}
+}
+@media(max-width:430px){
+  .singleCoursePrice ul{grid-template-columns:minmax(0,1fr)}
+  .singleCoursePrice li{min-height:66px;flex-direction:row;justify-content:space-between;border-top:1px solid #70384080;border-left:0}
+  .singleCoursePrice b{font-size:18px}
+}

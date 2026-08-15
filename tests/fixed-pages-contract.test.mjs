@@ -4,10 +4,12 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
+const readJson = async (path) => JSON.parse(await read(path));
 
 test("fixed pages retain the locked Callme operating facts", async () => {
-  const [areas, pricing, guide, notice] = await Promise.all([
+  const [areas, pricing, guide, notice, regions] = await Promise.all([
     read("app/areas/page.tsx"), read("app/pricing/page.tsx"), read("app/guide/page.tsx"), read("app/notice/page.tsx"),
+    readJson("src/data/regions.generated.json"),
   ]);
   for (const [name, route] of [
     ["서울", "/areas/seoul"],
@@ -21,7 +23,11 @@ test("fixed pages retain the locked Callme operating facts", async () => {
     assert.match(areas, new RegExp(`name: "${name}", route: "${route}"`, "u"));
   }
   assert.match(areas, /동·읍·면·군 페이지는 만들지 않습니다/);
-  assert.equal((pricing.match(/\["60분"|\["90분"|\["120분"/g) ?? []).length, 12);
+  assert.deepEqual(regions.operatingFacts.courses, [
+    { name: "센슈얼 감성 테라피", items: [[60, 120000], [90, 150000], [120, 180000]] },
+  ]);
+  assert.match(pricing, /OPERATING_FACTS\.courses/u);
+  assert.match(pricing, /singleCoursePrice/u);
   assert.match(pricing, /선입금 없는 100% 현장 후불/);
   assert.match(guide, /24시간 전화상담/);
   assert.match(guide, /현장 카드 결제 가능/);

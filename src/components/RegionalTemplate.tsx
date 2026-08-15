@@ -94,29 +94,6 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
         </section>
 
         <div className={styles.content}>
-          {childRegions.length > 0 ? (
-            <section className={styles.directory} aria-labelledby="child-regions-title">
-              <div className={styles.sectionHead}>
-                <div>
-                  <p className={styles.kicker}>DIRECTORY</p>
-                  <h2 id="child-regions-title">{region.label}에서 이어지는 지역</h2>
-                </div>
-                <p>현재 행정 경로 아래에서 다음 지역을 선택해 안내를 이어가세요.</p>
-              </div>
-              <ul className={styles.regionGrid}>
-                {childRegions.map((child, index) => (
-                  <li key={child.id}>
-                    <Link className={styles.regionCard} href={child.route}>
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                      <strong>{child.label}</strong>
-                      <em>지역 안내 <b aria-hidden="true">→</b></em>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
           <section className={styles.stepsSection} aria-labelledby="steps-title">
             <div className={styles.sectionHead}>
               <div>
@@ -146,14 +123,14 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
           <section className={styles.priceSection} id="price" aria-labelledby="price-title">
             <div className={styles.sectionHead}>
               <div>
-                <p className={styles.kicker}>COURSE &amp; PRICE</p>
-                <h2 id="price-title">코스별 시간과 가격</h2>
+                <p className={styles.kicker}>TODAKI SIGNATURE COURSE</p>
+                <h2 id="price-title">센슈얼 감성 테라피 시간별 가격</h2>
               </div>
-              <p>표시된 시간과 가격을 비교한 뒤, 실제 일정은 전화상담으로 확인해 주세요.</p>
+              <p>60분·90분·120분 중 이용 시간을 고른 뒤 실제 일정은 전화상담으로 확인해 주세요.</p>
             </div>
-            <div className={styles.courseGrid}>
+            <div className={`${styles.courseGrid} ${styles.singleCourseGrid}`}>
               {OPERATING_FACTS.courses.map((course, index) => (
-                <article className={styles.courseCard} key={course.name}>
+                <article className={`${styles.courseCard} ${styles.singleCourseCard}`} key={course.name}>
                   <div className={styles.courseCardHead}><span>{String(index + 1).padStart(2, "0")}</span><h3>{course.name}</h3></div>
                   <ul>
                     {course.items.map(([minutes, price]) => <li key={minutes}><span>{minutes}분</span><strong>{formatPrice(price)}</strong></li>)}
@@ -207,6 +184,29 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
               <div className={styles.nearbyLinks}>
                 {nearby.map((nearbyRegion) => <Link key={nearbyRegion.id} href={nearbyRegion.route}>{nearbyRegion.label} <span aria-hidden="true">→</span></Link>)}
               </div>
+            </section>
+          ) : null}
+
+          {childRegions.length > 0 ? (
+            <section className={styles.directory} aria-labelledby="child-regions-title">
+              <div className={styles.sectionHead}>
+                <div>
+                  <p className={styles.kicker}>DIRECTORY</p>
+                  <h2 id="child-regions-title">{region.label}에서 이어지는 지역</h2>
+                </div>
+                <p>현재 행정 경로 아래에서 다음 지역을 선택해 안내를 이어가세요.</p>
+              </div>
+              <ul className={styles.regionGrid}>
+                {childRegions.map((child, index) => (
+                  <li key={child.id}>
+                    <Link className={styles.regionCard} href={child.route}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <strong>{child.label}</strong>
+                      <em>지역 안내 <b aria-hidden="true">→</b></em>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           ) : null}
         </div>

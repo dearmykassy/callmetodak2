@@ -17,6 +17,9 @@ const HOME_METADATA_KEYWORDS = [
   "24시간 전화상담",
 ];
 const FORBIDDEN_MALE_TERM = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
+const TODAKI_COURSE = "센슈얼 감성 테라피";
+const TODAKI_PRICES = ["120,000원", "150,000원", "180,000원"];
+const LEGACY_COURSES = /타이|아로마|힐링|스페셜/u;
 
 const normalizeRoute = (route) => {
   const decodedRoute = decodeURIComponent(route);
@@ -98,6 +101,7 @@ for (const route of expectedRoutes) {
 
   assert.doesNotMatch(html, /placeholder\.callme-todaki\.local|noindex|nofollow/u);
   assert.doesNotMatch(html, new RegExp(FORBIDDEN_MALE_TERM, "u"));
+  assert.doesNotMatch(html, LEGACY_COURSES, `Legacy general-massage course leaked into ${route}`);
   assertRouteMatches(
     metadataValue(html, /<link rel="canonical" href="([^"]+)"/u, `canonical metadata for ${route}`),
     route,
@@ -122,6 +126,12 @@ for (const route of expectedRoutes) {
   }
 
   const regionalContent = regionalContentByRoute.get(route);
+  if (route === "/" || route === "/pricing" || regionalContent) {
+    assert.ok(html.includes(TODAKI_COURSE), `Missing the Todaki signature course on ${route}`);
+    for (const price of TODAKI_PRICES) {
+      assert.ok(html.includes(price), `Missing ${price} on ${route}`);
+    }
+  }
   if (regionalContent) {
     assert.equal(title, regionalContent.title, `Regional title must not receive the layout suffix twice: ${route}`);
     const regionalKeywords = metadataValue(

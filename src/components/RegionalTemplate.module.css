@@ -234,6 +234,32 @@
 .courseCard ul { padding: 0; margin: 18px 0 0; list-style: none; }
 .courseCard li { min-height: 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #70384080; color: #d5babc; font-size: 11px; }
 .courseCard li strong { color: #f3d87d; }
+.singleCourseGrid { grid-template-columns: minmax(0, 1fr); }
+.singleCourseCard {
+  min-height: 270px;
+  grid-column: auto !important;
+  display: grid;
+  grid-template-columns: minmax(220px, .78fr) minmax(0, 1.55fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(28px, 4vw, 46px);
+  background: radial-gradient(circle at 88% 0%, #e5bd4330, transparent 28%), linear-gradient(135deg, #35171e, #1c0b10);
+}
+.singleCourseCard .courseCardHead { flex-direction: column; align-items: flex-start; justify-content: center; gap: 17px; }
+.singleCourseCard .courseCardHead span { font-size: 11px; letter-spacing: .18em; }
+.singleCourseCard h3 { max-width: 390px; font-size: clamp(30px, 4vw, 47px); line-height: 1.08; }
+.singleCourseCard ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: stretch; margin: 0; }
+.singleCourseCard li {
+  min-width: 0;
+  min-height: 150px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  border-top: 0;
+  border-left: 1px solid #b7893d59;
+  font-size: 14px;
+}
+.singleCourseCard li:first-child { border-left: 0; }
+.singleCourseCard li strong { font-size: clamp(20px, 2.6vw, 29px); letter-spacing: -.035em; }
 
 .principleGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 28px; }
 .principleGrid article { min-height: 192px; padding: 21px; border: 1px solid #6a303ab8; border-radius: 12px; background: #2d1617b8; }
@@ -296,6 +322,12 @@
   .introCopy p { font-size: 13px; }
   .courseGrid, .principleGrid { grid-template-columns: 1fr; }
   .courseCard { padding: 18px; }
+  .singleCourseGrid { grid-template-columns: minmax(0, 1fr); }
+  .singleCourseCard { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 28px 22px; }
+  .singleCourseCard .courseCardHead { justify-content: flex-start; }
+  .singleCourseCard h3 { font-size: 31px; }
+  .singleCourseCard ul { min-width: 0; }
+  .singleCourseCard li { min-height: 105px; }
   .principleGrid article { min-height: 0; }
   .faqList summary { font-size: 12px; }
   .faqList p { padding-right: 0; font-size: 12px; }
@@ -363,4 +395,7 @@
   .headerCall { padding-inline: 6px; font-size: 8.5px; }
   .hero h1 { font-size: clamp(29px, 9.6vw, 33px); }
   .heroActions { grid-template-columns: 1fr; }
+  .singleCourseCard ul { grid-template-columns: minmax(0, 1fr); }
+  .singleCourseCard li { min-height: 66px; flex-direction: row; justify-content: space-between; border-top: 1px solid #70384080; border-left: 0; }
+  .singleCourseCard li strong { font-size: 18px; }
 }
