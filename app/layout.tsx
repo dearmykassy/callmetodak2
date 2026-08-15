@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import "./image-release.css";
 
+import { Ga4Tracker } from "@/src/components/Ga4Tracker";
 import { getHomeHeroImage, getSocialImage } from "@/src/data/image-release";
 import { SITE_URL } from "@/src/data/site";
+import { parseGaMeasurementId } from "@/src/lib/analytics";
+
+const GA_MEASUREMENT_ID = parseGaMeasurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
 
 const homeSocialImage = getSocialImage(getHomeHeroImage(), "콜미토닥이 여성전용 출장마사지 안내");
 const HOME_METADATA_TITLE = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
@@ -51,7 +56,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {children}
+        {GA_MEASUREMENT_ID ? (
+          <Suspense fallback={null}>
+            <Ga4Tracker measurementId={GA_MEASUREMENT_ID} platformId="callme-todaki" />
+          </Suspense>
+        ) : null}
+      </body>
     </html>
   );
 }

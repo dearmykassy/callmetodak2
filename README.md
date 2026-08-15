@@ -22,6 +22,16 @@ npm run lint
 npm run build
 ```
 
+## GA4 환경 변수
+
+Netlify의 `Site configuration → Environment variables`에 사이트 전용 GA4 웹 스트림 값을 빌드 환경 변수로 등록합니다.
+
+```text
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+값이 없거나 잘못된 형식이면 계측 코드는 출력되지 않습니다. 이벤트와 개인정보 제외 규칙은 `docs/ANALYTICS.md`를 따릅니다.
+
 이미지 원본 검수와 배정은 프로젝트 밖의 공용 파이프라인에서 끝낸 뒤 아래 명령으로만 활성화합니다.
 
 ```bash
