@@ -1,0 +1,2007 @@
+{
+  "schemaVersion": "callme-todaki-runtime-image-release/v1",
+  "status": "ACTIVE",
+  "releaseVersion": "v1",
+  "platformKey": "callme-todaki",
+  "review": {
+    "relativePath": "reviews/callme-todaki.release-review.v1.json",
+    "sha256": "df25e0ed8af25aa141dc34057f1872066ba924f6fe81967c1b829b12843bf438"
+  },
+  "home": {
+    "assetId": "cmt-home-001-b01",
+    "jobId": "cmt-home-001-b01",
+    "sourceSha256": "2c32169535a505304fae781d08162a5b058a2cc992642ae8c321b7a8289b732f",
+    "subjectSide": "left",
+    "copySide": "right",
+    "files": {
+      "desktop": "/images/callme-todaki/v1/home/desktop.webp",
+      "tablet": "/images/callme-todaki/v1/home/tablet.webp",
+      "mobile": "/images/callme-todaki/v1/home/mobile.webp"
+    },
+    "palette": {
+      "stripAverage": "#0a0d17",
+      "headerPrimary": "#080a12",
+      "headerSecondary": "#06080f",
+      "text": "#fff7eb",
+      "contrastRatio": 18.59
+    }
+  },
+  "regions": {
+    "/areas/asan": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheonan": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheonan/동남구": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheonan/서북구": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheongju": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheongju/상당구": {
+      "assetId": "cmt-rgn-001-b01",
+      "jobId": "cmt-rgn-001-b01",
+      "sourceSha256": "206d69b40352c1238d31033a7c1bb7ea5dce5b9dbbf7a50b914025fa45427c3c",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-001-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1f1a1c",
+        "headerPrimary": "#191516",
+        "headerSecondary": "#141112",
+        "text": "#fff7eb",
+        "contrastRatio": 17.03
+      }
+    },
+    "/areas/cheongju/서원구": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/cheongju/청원구": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/cheongju/흥덕구": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/daejeon": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/daejeon/대덕구": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/daejeon/동구": {
+      "assetId": "cmt-rgn-002-b02",
+      "jobId": "cmt-rgn-002-b02",
+      "sourceSha256": "fb331449e67852fa220e01c753564291447cded9bb8c0157268c28244b3b69e9",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-002-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a090d",
+        "headerPrimary": "#08070a",
+        "headerSecondary": "#060608",
+        "text": "#fff7eb",
+        "contrastRatio": 18.9
+      }
+    },
+    "/areas/daejeon/서구": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/daejeon/유성구": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/daejeon/중구": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/gyeonggi": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/gyeonggi/고양시": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/gyeonggi/고양시/덕양구": {
+      "assetId": "cmt-rgn-003-b01",
+      "jobId": "cmt-rgn-003-b01",
+      "sourceSha256": "402c3b3898a361728616b845134187cf01879b9ea6513db67504aa52fcc38228",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-003-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0a111e",
+        "headerPrimary": "#080e18",
+        "headerSecondary": "#060b13",
+        "text": "#fff7eb",
+        "contrastRatio": 18.19
+      }
+    },
+    "/areas/gyeonggi/고양시/일산동구": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/고양시/일산서구": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/과천시": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/광명시": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/광주시": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/구리시": {
+      "assetId": "cmt-rgn-004-b01",
+      "jobId": "cmt-rgn-004-b01",
+      "sourceSha256": "ede27ad5e26542f642262e0e50c0f9d4af6f72d37036d20e6a26a2104359a7c6",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-004-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1d1b22",
+        "headerPrimary": "#17161b",
+        "headerSecondary": "#131116",
+        "text": "#fff7eb",
+        "contrastRatio": 16.93
+      }
+    },
+    "/areas/gyeonggi/군포시": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/김포시": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/남양주시": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/동두천시": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/부천시": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/부천시/소사구": {
+      "assetId": "cmt-rgn-005-b01",
+      "jobId": "cmt-rgn-005-b01",
+      "sourceSha256": "5ab99b620d191e7f0e735ed6b14a8ad47fb8a13269f8f5fd01e26bc334470974",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-005-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#10121b",
+        "headerPrimary": "#0d0e16",
+        "headerSecondary": "#0a0c11",
+        "text": "#fff7eb",
+        "contrastRatio": 18.1
+      }
+    },
+    "/areas/gyeonggi/부천시/오정구": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/부천시/원미구": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/성남시": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/성남시/분당구": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/성남시/수정구": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/성남시/중원구": {
+      "assetId": "cmt-rgn-006-b02",
+      "jobId": "cmt-rgn-006-b02",
+      "sourceSha256": "c196ca1aeea157ab817a6f0ac690835e190a794042a28c76831ff3f7375ebf2f",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-006-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#12131e",
+        "headerPrimary": "#0e0f18",
+        "headerSecondary": "#0c0c13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.96
+      }
+    },
+    "/areas/gyeonggi/수원시": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/수원시/권선구": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/수원시/영통구": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/수원시/장안구": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/수원시/팔달구": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/시흥시": {
+      "assetId": "cmt-rgn-007-b01",
+      "jobId": "cmt-rgn-007-b01",
+      "sourceSha256": "e49140e60b4c475a1be533a181d3fc243c2691255f45e10d9c347d68a2530697",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-007-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#16181e",
+        "headerPrimary": "#121318",
+        "headerSecondary": "#0e0f13",
+        "text": "#fff7eb",
+        "contrastRatio": 17.45
+      }
+    },
+    "/areas/gyeonggi/안산시": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안산시/단원구": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안산시/상록구": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안성시": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안양시": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안양시/동안구": {
+      "assetId": "cmt-rgn-008-b02",
+      "jobId": "cmt-rgn-008-b02",
+      "sourceSha256": "f864d55d0023eb90b53b91ac5961be391cea435ef2ef9354922e2793ad334ec4",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-008-b02/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#191515",
+        "headerPrimary": "#141111",
+        "headerSecondary": "#100d0d",
+        "text": "#fff7eb",
+        "contrastRatio": 17.67
+      }
+    },
+    "/areas/gyeonggi/안양시/만안구": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/양주시": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/여주시": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/오산시": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/용인시": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/용인시/기흥구": {
+      "assetId": "cmt-rgn-009-b01",
+      "jobId": "cmt-rgn-009-b01",
+      "sourceSha256": "a9a95d2bef67d6e385f16216ece1fdddec155d43df8262917cfba409a8bd85af",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-009-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#080914",
+        "headerPrimary": "#060710",
+        "headerSecondary": "#05060d",
+        "text": "#fff7eb",
+        "contrastRatio": 18.89
+      }
+    },
+    "/areas/gyeonggi/용인시/수지구": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/용인시/처인구": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/의왕시": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/의정부시": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/이천시": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/파주시": {
+      "assetId": "cmt-rgn-010-b01",
+      "jobId": "cmt-rgn-010-b01",
+      "sourceSha256": "198d87bc5cc9a7357fb024876849fe106fe352a1e88847d6718b1043dbdbd962",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-010-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161113",
+        "headerPrimary": "#120e0f",
+        "headerSecondary": "#0e0b0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.03
+      }
+    },
+    "/areas/gyeonggi/평택시": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/포천시": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/하남시": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/화성시": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/화성시/동탄구": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/화성시/만세구": {
+      "assetId": "cmt-rgn-011-b01",
+      "jobId": "cmt-rgn-011-b01",
+      "sourceSha256": "c3bf8b92f21ef48ad4c0eb8306a4b37b097bca1f7fd6ce65f6010d049f5e2c98",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-011-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#1b1816",
+        "headerPrimary": "#161312",
+        "headerSecondary": "#110f0e",
+        "text": "#fff7eb",
+        "contrastRatio": 17.39
+      }
+    },
+    "/areas/gyeonggi/화성시/병점구": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/gyeonggi/화성시/효행구": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/incheon": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/incheon/검단구": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/incheon/계양구": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/incheon/남동구": {
+      "assetId": "cmt-rgn-012-b01",
+      "jobId": "cmt-rgn-012-b01",
+      "sourceSha256": "a30b3a57c6af82deb089a253ed4f1e026e1bfb4833a01bb4aa3bd4e1644d5054",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-012-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#291d1e",
+        "headerPrimary": "#211718",
+        "headerSecondary": "#1a1313",
+        "text": "#fff7eb",
+        "contrastRatio": 16.46
+      }
+    },
+    "/areas/incheon/미추홀구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/incheon/부평구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/incheon/서해구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/incheon/연수구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/incheon/영종구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/incheon/제물포구": {
+      "assetId": "cmt-rgn-013-b01",
+      "jobId": "cmt-rgn-013-b01",
+      "sourceSha256": "8f952287a0e7f64a80fae1cd1fc1e083c12a2fdb9a414e38617c64ae391934b5",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-013-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#120e0c",
+        "headerPrimary": "#0e0b0a",
+        "headerSecondary": "#0c0908",
+        "text": "#fff7eb",
+        "contrastRatio": 18.45
+      }
+    },
+    "/areas/seoul": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/강남구": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/강동구": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/강북구": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/강서구": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/관악구": {
+      "assetId": "cmt-rgn-014-b01",
+      "jobId": "cmt-rgn-014-b01",
+      "sourceSha256": "d4bc77b85dd16e24cb2732691ff3deaacdf7f1fbb708e2cb8fff95d70d2c3a43",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-014-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#100e0e",
+        "headerPrimary": "#0d0b0b",
+        "headerSecondary": "#0a0909",
+        "text": "#fff7eb",
+        "contrastRatio": 18.47
+      }
+    },
+    "/areas/seoul/광진구": {
+      "assetId": "cmt-rgn-015-b03",
+      "jobId": "cmt-rgn-015-b03",
+      "sourceSha256": "2a303ae9323cf4d305f383933681804c0595e55bba21c41e0a613f3aae383503",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#15141b",
+        "headerPrimary": "#111016",
+        "headerSecondary": "#0d0d11",
+        "text": "#fff7eb",
+        "contrastRatio": 17.81
+      }
+    },
+    "/areas/seoul/구로구": {
+      "assetId": "cmt-rgn-015-b03",
+      "jobId": "cmt-rgn-015-b03",
+      "sourceSha256": "2a303ae9323cf4d305f383933681804c0595e55bba21c41e0a613f3aae383503",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#15141b",
+        "headerPrimary": "#111016",
+        "headerSecondary": "#0d0d11",
+        "text": "#fff7eb",
+        "contrastRatio": 17.81
+      }
+    },
+    "/areas/seoul/금천구": {
+      "assetId": "cmt-rgn-015-b03",
+      "jobId": "cmt-rgn-015-b03",
+      "sourceSha256": "2a303ae9323cf4d305f383933681804c0595e55bba21c41e0a613f3aae383503",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#15141b",
+        "headerPrimary": "#111016",
+        "headerSecondary": "#0d0d11",
+        "text": "#fff7eb",
+        "contrastRatio": 17.81
+      }
+    },
+    "/areas/seoul/노원구": {
+      "assetId": "cmt-rgn-015-b03",
+      "jobId": "cmt-rgn-015-b03",
+      "sourceSha256": "2a303ae9323cf4d305f383933681804c0595e55bba21c41e0a613f3aae383503",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#15141b",
+        "headerPrimary": "#111016",
+        "headerSecondary": "#0d0d11",
+        "text": "#fff7eb",
+        "contrastRatio": 17.81
+      }
+    },
+    "/areas/seoul/도봉구": {
+      "assetId": "cmt-rgn-015-b03",
+      "jobId": "cmt-rgn-015-b03",
+      "sourceSha256": "2a303ae9323cf4d305f383933681804c0595e55bba21c41e0a613f3aae383503",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-015-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#15141b",
+        "headerPrimary": "#111016",
+        "headerSecondary": "#0d0d11",
+        "text": "#fff7eb",
+        "contrastRatio": 17.81
+      }
+    },
+    "/areas/seoul/동대문구": {
+      "assetId": "cmt-rgn-016-b03",
+      "jobId": "cmt-rgn-016-b03",
+      "sourceSha256": "29e3444737fdc42c855d66dcac1c180426db3e16d41226a9c9e4507070cd7621",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#121012",
+        "headerPrimary": "#0e0d0e",
+        "headerSecondary": "#0c0a0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.25
+      }
+    },
+    "/areas/seoul/동작구": {
+      "assetId": "cmt-rgn-016-b03",
+      "jobId": "cmt-rgn-016-b03",
+      "sourceSha256": "29e3444737fdc42c855d66dcac1c180426db3e16d41226a9c9e4507070cd7621",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#121012",
+        "headerPrimary": "#0e0d0e",
+        "headerSecondary": "#0c0a0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.25
+      }
+    },
+    "/areas/seoul/마포구": {
+      "assetId": "cmt-rgn-016-b03",
+      "jobId": "cmt-rgn-016-b03",
+      "sourceSha256": "29e3444737fdc42c855d66dcac1c180426db3e16d41226a9c9e4507070cd7621",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#121012",
+        "headerPrimary": "#0e0d0e",
+        "headerSecondary": "#0c0a0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.25
+      }
+    },
+    "/areas/seoul/서대문구": {
+      "assetId": "cmt-rgn-016-b03",
+      "jobId": "cmt-rgn-016-b03",
+      "sourceSha256": "29e3444737fdc42c855d66dcac1c180426db3e16d41226a9c9e4507070cd7621",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#121012",
+        "headerPrimary": "#0e0d0e",
+        "headerSecondary": "#0c0a0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.25
+      }
+    },
+    "/areas/seoul/서초구": {
+      "assetId": "cmt-rgn-016-b03",
+      "jobId": "cmt-rgn-016-b03",
+      "sourceSha256": "29e3444737fdc42c855d66dcac1c180426db3e16d41226a9c9e4507070cd7621",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-016-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#121012",
+        "headerPrimary": "#0e0d0e",
+        "headerSecondary": "#0c0a0c",
+        "text": "#fff7eb",
+        "contrastRatio": 18.25
+      }
+    },
+    "/areas/seoul/성동구": {
+      "assetId": "cmt-rgn-017-b01",
+      "jobId": "cmt-rgn-017-b01",
+      "sourceSha256": "344eba0ff4037183abcd8218942d973cac1813b88abcf4eac7ab3e6874a76798",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161928",
+        "headerPrimary": "#121420",
+        "headerSecondary": "#0e101a",
+        "text": "#fff7eb",
+        "contrastRatio": 17.23
+      }
+    },
+    "/areas/seoul/성북구": {
+      "assetId": "cmt-rgn-017-b01",
+      "jobId": "cmt-rgn-017-b01",
+      "sourceSha256": "344eba0ff4037183abcd8218942d973cac1813b88abcf4eac7ab3e6874a76798",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161928",
+        "headerPrimary": "#121420",
+        "headerSecondary": "#0e101a",
+        "text": "#fff7eb",
+        "contrastRatio": 17.23
+      }
+    },
+    "/areas/seoul/송파구": {
+      "assetId": "cmt-rgn-017-b01",
+      "jobId": "cmt-rgn-017-b01",
+      "sourceSha256": "344eba0ff4037183abcd8218942d973cac1813b88abcf4eac7ab3e6874a76798",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161928",
+        "headerPrimary": "#121420",
+        "headerSecondary": "#0e101a",
+        "text": "#fff7eb",
+        "contrastRatio": 17.23
+      }
+    },
+    "/areas/seoul/양천구": {
+      "assetId": "cmt-rgn-017-b01",
+      "jobId": "cmt-rgn-017-b01",
+      "sourceSha256": "344eba0ff4037183abcd8218942d973cac1813b88abcf4eac7ab3e6874a76798",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161928",
+        "headerPrimary": "#121420",
+        "headerSecondary": "#0e101a",
+        "text": "#fff7eb",
+        "contrastRatio": 17.23
+      }
+    },
+    "/areas/seoul/영등포구": {
+      "assetId": "cmt-rgn-017-b01",
+      "jobId": "cmt-rgn-017-b01",
+      "sourceSha256": "344eba0ff4037183abcd8218942d973cac1813b88abcf4eac7ab3e6874a76798",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-017-b01/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#161928",
+        "headerPrimary": "#121420",
+        "headerSecondary": "#0e101a",
+        "text": "#fff7eb",
+        "contrastRatio": 17.23
+      }
+    },
+    "/areas/seoul/용산구": {
+      "assetId": "cmt-rgn-018-b03",
+      "jobId": "cmt-rgn-018-b03",
+      "sourceSha256": "463c0e61ef2f5e7dc7b25104fa5f13808f0b677d6a59696b05281b9596594576",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0b0d11",
+        "headerPrimary": "#090a0e",
+        "headerSecondary": "#07080b",
+        "text": "#fff7eb",
+        "contrastRatio": 18.61
+      }
+    },
+    "/areas/seoul/은평구": {
+      "assetId": "cmt-rgn-018-b03",
+      "jobId": "cmt-rgn-018-b03",
+      "sourceSha256": "463c0e61ef2f5e7dc7b25104fa5f13808f0b677d6a59696b05281b9596594576",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0b0d11",
+        "headerPrimary": "#090a0e",
+        "headerSecondary": "#07080b",
+        "text": "#fff7eb",
+        "contrastRatio": 18.61
+      }
+    },
+    "/areas/seoul/종로구": {
+      "assetId": "cmt-rgn-018-b03",
+      "jobId": "cmt-rgn-018-b03",
+      "sourceSha256": "463c0e61ef2f5e7dc7b25104fa5f13808f0b677d6a59696b05281b9596594576",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0b0d11",
+        "headerPrimary": "#090a0e",
+        "headerSecondary": "#07080b",
+        "text": "#fff7eb",
+        "contrastRatio": 18.61
+      }
+    },
+    "/areas/seoul/중구": {
+      "assetId": "cmt-rgn-018-b03",
+      "jobId": "cmt-rgn-018-b03",
+      "sourceSha256": "463c0e61ef2f5e7dc7b25104fa5f13808f0b677d6a59696b05281b9596594576",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0b0d11",
+        "headerPrimary": "#090a0e",
+        "headerSecondary": "#07080b",
+        "text": "#fff7eb",
+        "contrastRatio": 18.61
+      }
+    },
+    "/areas/seoul/중랑구": {
+      "assetId": "cmt-rgn-018-b03",
+      "jobId": "cmt-rgn-018-b03",
+      "sourceSha256": "463c0e61ef2f5e7dc7b25104fa5f13808f0b677d6a59696b05281b9596594576",
+      "subjectSide": "left",
+      "copySide": "right",
+      "files": {
+        "desktop": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/desktop.webp",
+        "tablet": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/tablet.webp",
+        "mobile": "/images/callme-todaki/v1/regional/cmt-rgn-018-b03/mobile.webp"
+      },
+      "palette": {
+        "stripAverage": "#0b0d11",
+        "headerPrimary": "#090a0e",
+        "headerSecondary": "#07080b",
+        "text": "#fff7eb",
+        "contrastRatio": 18.61
+      }
+    }
+  }
+}

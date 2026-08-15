@@ -1,0 +1,2533 @@
+{
+  "schemaVersion": 1,
+  "status": "CALLME_OWNED_REGION_SNAPSHOT",
+  "scope": "7 service roots plus 97 administrative city/gu routes; dong/eup/myeon/gun excluded",
+  "counts": {
+    "regions": 104,
+    "serviceRoots": 7,
+    "administrativeHubs": 97,
+    "massageBomSemanticRoutes": 99,
+    "starVerifiedCheongjuRoutes": 5
+  },
+  "excludedCountyRoutes": [
+    "/areas/incheon/강화군",
+    "/areas/incheon/옹진군",
+    "/areas/gyeonggi/가평군",
+    "/areas/gyeonggi/양평군",
+    "/areas/gyeonggi/연천군"
+  ],
+  "operatingFacts": {
+    "phone": {
+      "display": "0508-202-3906",
+      "href": "tel:05082023906"
+    },
+    "phoneConsultation": "24시간 전화상담",
+    "paymentTiming": "선입금 없는 100% 현장 후불",
+    "cardPayment": "현장 카드 결제 가능",
+    "availabilityNotice": "서비스 주소와 희망 시각, 코스는 전화상담에서 확인합니다.",
+    "courses": [
+      {
+        "name": "타이",
+        "items": [
+          [
+            60,
+            80000
+          ],
+          [
+            90,
+            100000
+          ],
+          [
+            120,
+            120000
+          ]
+        ]
+      },
+      {
+        "name": "아로마",
+        "items": [
+          [
+            60,
+            90000
+          ],
+          [
+            90,
+            110000
+          ],
+          [
+            120,
+            130000
+          ]
+        ]
+      },
+      {
+        "name": "힐링",
+        "items": [
+          [
+            60,
+            100000
+          ],
+          [
+            90,
+            120000
+          ],
+          [
+            120,
+            140000
+          ]
+        ]
+      },
+      {
+        "name": "스페셜",
+        "items": [
+          [
+            60,
+            110000
+          ],
+          [
+            90,
+            130000
+          ],
+          [
+            120,
+            150000
+          ]
+        ]
+      },
+      {
+        "name": "남성전용",
+        "items": [
+          [
+            60,
+            120000
+          ],
+          [
+            90,
+            150000
+          ]
+        ]
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "root-asan",
+      "kind": "service-root",
+      "rootKey": "asan",
+      "name": "아산",
+      "label": "아산",
+      "keywordBase": "아산",
+      "route": "/areas/asan",
+      "segments": [
+        "asan"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "아산 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/asan",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "root-cheonan",
+      "kind": "service-root",
+      "rootKey": "cheonan",
+      "name": "천안",
+      "label": "천안",
+      "keywordBase": "천안",
+      "route": "/areas/cheonan",
+      "segments": [
+        "cheonan"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "천안 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/cheonan",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-cheonan-동남구",
+      "kind": "administrative-hub",
+      "rootKey": "cheonan",
+      "name": "동남구",
+      "label": "천안 동남구",
+      "keywordBase": "천안동남구",
+      "route": "/areas/cheonan/동남구",
+      "segments": [
+        "cheonan",
+        "동남구"
+      ],
+      "parentId": "root-cheonan",
+      "ancestors": [
+        "root-cheonan"
+      ],
+      "scopeLabel": "천안 동남구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/cheonan/동남구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-cheonan-서북구",
+      "kind": "administrative-hub",
+      "rootKey": "cheonan",
+      "name": "서북구",
+      "label": "천안 서북구",
+      "keywordBase": "천안서북구",
+      "route": "/areas/cheonan/서북구",
+      "segments": [
+        "cheonan",
+        "서북구"
+      ],
+      "parentId": "root-cheonan",
+      "ancestors": [
+        "root-cheonan"
+      ],
+      "scopeLabel": "천안 서북구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/cheonan/서북구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "root-cheongju",
+      "kind": "service-root",
+      "rootKey": "cheongju",
+      "name": "청주",
+      "label": "청주",
+      "keywordBase": "청주",
+      "route": "/areas/cheongju",
+      "segments": [
+        "cheongju"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "청주 운영권역 안내",
+      "source": {
+        "kind": "star-verified-locality",
+        "route": null,
+        "note": "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted."
+      }
+    },
+    {
+      "id": "admin-cheongju-상당구",
+      "kind": "administrative-hub",
+      "rootKey": "cheongju",
+      "name": "상당구",
+      "label": "청주 상당구",
+      "keywordBase": "청주상당구",
+      "route": "/areas/cheongju/상당구",
+      "segments": [
+        "cheongju",
+        "상당구"
+      ],
+      "parentId": "root-cheongju",
+      "ancestors": [
+        "root-cheongju"
+      ],
+      "scopeLabel": "청주 상당구 행정 기준 안내",
+      "source": {
+        "kind": "star-verified-locality",
+        "route": null,
+        "note": "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted."
+      }
+    },
+    {
+      "id": "admin-cheongju-서원구",
+      "kind": "administrative-hub",
+      "rootKey": "cheongju",
+      "name": "서원구",
+      "label": "청주 서원구",
+      "keywordBase": "청주서원구",
+      "route": "/areas/cheongju/서원구",
+      "segments": [
+        "cheongju",
+        "서원구"
+      ],
+      "parentId": "root-cheongju",
+      "ancestors": [
+        "root-cheongju"
+      ],
+      "scopeLabel": "청주 서원구 행정 기준 안내",
+      "source": {
+        "kind": "star-verified-locality",
+        "route": null,
+        "note": "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted."
+      }
+    },
+    {
+      "id": "admin-cheongju-청원구",
+      "kind": "administrative-hub",
+      "rootKey": "cheongju",
+      "name": "청원구",
+      "label": "청주 청원구",
+      "keywordBase": "청주청원구",
+      "route": "/areas/cheongju/청원구",
+      "segments": [
+        "cheongju",
+        "청원구"
+      ],
+      "parentId": "root-cheongju",
+      "ancestors": [
+        "root-cheongju"
+      ],
+      "scopeLabel": "청주 청원구 행정 기준 안내",
+      "source": {
+        "kind": "star-verified-locality",
+        "route": null,
+        "note": "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted."
+      }
+    },
+    {
+      "id": "admin-cheongju-흥덕구",
+      "kind": "administrative-hub",
+      "rootKey": "cheongju",
+      "name": "흥덕구",
+      "label": "청주 흥덕구",
+      "keywordBase": "청주흥덕구",
+      "route": "/areas/cheongju/흥덕구",
+      "segments": [
+        "cheongju",
+        "흥덕구"
+      ],
+      "parentId": "root-cheongju",
+      "ancestors": [
+        "root-cheongju"
+      ],
+      "scopeLabel": "청주 흥덕구 행정 기준 안내",
+      "source": {
+        "kind": "star-verified-locality",
+        "route": null,
+        "note": "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted."
+      }
+    },
+    {
+      "id": "root-daejeon",
+      "kind": "service-root",
+      "rootKey": "daejeon",
+      "name": "대전",
+      "label": "대전",
+      "keywordBase": "대전",
+      "route": "/areas/daejeon",
+      "segments": [
+        "daejeon"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "대전 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-daejeon-대덕구",
+      "kind": "administrative-hub",
+      "rootKey": "daejeon",
+      "name": "대덕구",
+      "label": "대전 대덕구",
+      "keywordBase": "대전대덕구",
+      "route": "/areas/daejeon/대덕구",
+      "segments": [
+        "daejeon",
+        "대덕구"
+      ],
+      "parentId": "root-daejeon",
+      "ancestors": [
+        "root-daejeon"
+      ],
+      "scopeLabel": "대전 대덕구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon/대덕구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-daejeon-동구",
+      "kind": "administrative-hub",
+      "rootKey": "daejeon",
+      "name": "동구",
+      "label": "대전 동구",
+      "keywordBase": "대전동구",
+      "route": "/areas/daejeon/동구",
+      "segments": [
+        "daejeon",
+        "동구"
+      ],
+      "parentId": "root-daejeon",
+      "ancestors": [
+        "root-daejeon"
+      ],
+      "scopeLabel": "대전 동구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon/동구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-daejeon-서구",
+      "kind": "administrative-hub",
+      "rootKey": "daejeon",
+      "name": "서구",
+      "label": "대전 서구",
+      "keywordBase": "대전서구",
+      "route": "/areas/daejeon/서구",
+      "segments": [
+        "daejeon",
+        "서구"
+      ],
+      "parentId": "root-daejeon",
+      "ancestors": [
+        "root-daejeon"
+      ],
+      "scopeLabel": "대전 서구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon/서구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-daejeon-유성구",
+      "kind": "administrative-hub",
+      "rootKey": "daejeon",
+      "name": "유성구",
+      "label": "대전 유성구",
+      "keywordBase": "대전유성구",
+      "route": "/areas/daejeon/유성구",
+      "segments": [
+        "daejeon",
+        "유성구"
+      ],
+      "parentId": "root-daejeon",
+      "ancestors": [
+        "root-daejeon"
+      ],
+      "scopeLabel": "대전 유성구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon/유성구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-daejeon-중구",
+      "kind": "administrative-hub",
+      "rootKey": "daejeon",
+      "name": "중구",
+      "label": "대전 중구",
+      "keywordBase": "대전중구",
+      "route": "/areas/daejeon/중구",
+      "segments": [
+        "daejeon",
+        "중구"
+      ],
+      "parentId": "root-daejeon",
+      "ancestors": [
+        "root-daejeon"
+      ],
+      "scopeLabel": "대전 중구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/daejeon/중구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "root-gyeonggi",
+      "kind": "service-root",
+      "rootKey": "gyeonggi",
+      "name": "경기",
+      "label": "경기",
+      "keywordBase": "경기",
+      "route": "/areas/gyeonggi",
+      "segments": [
+        "gyeonggi"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "경기 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-고양시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "고양시",
+      "label": "고양",
+      "keywordBase": "고양",
+      "route": "/areas/gyeonggi/고양시",
+      "segments": [
+        "gyeonggi",
+        "고양시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "고양 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/고양시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-고양시--덕양구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "덕양구",
+      "label": "고양 덕양구",
+      "keywordBase": "고양덕양구",
+      "route": "/areas/gyeonggi/고양시/덕양구",
+      "segments": [
+        "gyeonggi",
+        "고양시",
+        "덕양구"
+      ],
+      "parentId": "admin-gyeonggi-고양시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-고양시"
+      ],
+      "scopeLabel": "고양 덕양구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/고양시/덕양구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-고양시--일산동구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "일산동구",
+      "label": "고양 일산동구",
+      "keywordBase": "고양일산동구",
+      "route": "/areas/gyeonggi/고양시/일산동구",
+      "segments": [
+        "gyeonggi",
+        "고양시",
+        "일산동구"
+      ],
+      "parentId": "admin-gyeonggi-고양시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-고양시"
+      ],
+      "scopeLabel": "고양 일산동구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/고양시/일산동구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-고양시--일산서구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "일산서구",
+      "label": "고양 일산서구",
+      "keywordBase": "고양일산서구",
+      "route": "/areas/gyeonggi/고양시/일산서구",
+      "segments": [
+        "gyeonggi",
+        "고양시",
+        "일산서구"
+      ],
+      "parentId": "admin-gyeonggi-고양시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-고양시"
+      ],
+      "scopeLabel": "고양 일산서구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/고양시/일산서구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-과천시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "과천시",
+      "label": "과천",
+      "keywordBase": "과천",
+      "route": "/areas/gyeonggi/과천시",
+      "segments": [
+        "gyeonggi",
+        "과천시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "과천 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/과천시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-광명시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "광명시",
+      "label": "광명",
+      "keywordBase": "광명",
+      "route": "/areas/gyeonggi/광명시",
+      "segments": [
+        "gyeonggi",
+        "광명시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "광명 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/광명시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-광주시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "광주시",
+      "label": "광주",
+      "keywordBase": "광주",
+      "route": "/areas/gyeonggi/광주시",
+      "segments": [
+        "gyeonggi",
+        "광주시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "광주 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/광주시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-구리시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "구리시",
+      "label": "구리",
+      "keywordBase": "구리",
+      "route": "/areas/gyeonggi/구리시",
+      "segments": [
+        "gyeonggi",
+        "구리시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "구리 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/구리시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-군포시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "군포시",
+      "label": "군포",
+      "keywordBase": "군포",
+      "route": "/areas/gyeonggi/군포시",
+      "segments": [
+        "gyeonggi",
+        "군포시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "군포 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/군포시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-김포시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "김포시",
+      "label": "김포",
+      "keywordBase": "김포",
+      "route": "/areas/gyeonggi/김포시",
+      "segments": [
+        "gyeonggi",
+        "김포시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "김포 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/김포시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-남양주시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "남양주시",
+      "label": "남양주",
+      "keywordBase": "남양주",
+      "route": "/areas/gyeonggi/남양주시",
+      "segments": [
+        "gyeonggi",
+        "남양주시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "남양주 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/남양주시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-동두천시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "동두천시",
+      "label": "동두천",
+      "keywordBase": "동두천",
+      "route": "/areas/gyeonggi/동두천시",
+      "segments": [
+        "gyeonggi",
+        "동두천시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "동두천 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/동두천시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-부천시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "부천시",
+      "label": "부천",
+      "keywordBase": "부천",
+      "route": "/areas/gyeonggi/부천시",
+      "segments": [
+        "gyeonggi",
+        "부천시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "부천 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/부천시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-부천시--소사구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "소사구",
+      "label": "부천 소사구",
+      "keywordBase": "부천소사구",
+      "route": "/areas/gyeonggi/부천시/소사구",
+      "segments": [
+        "gyeonggi",
+        "부천시",
+        "소사구"
+      ],
+      "parentId": "admin-gyeonggi-부천시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-부천시"
+      ],
+      "scopeLabel": "부천 소사구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/부천시/소사구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-부천시--오정구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "오정구",
+      "label": "부천 오정구",
+      "keywordBase": "부천오정구",
+      "route": "/areas/gyeonggi/부천시/오정구",
+      "segments": [
+        "gyeonggi",
+        "부천시",
+        "오정구"
+      ],
+      "parentId": "admin-gyeonggi-부천시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-부천시"
+      ],
+      "scopeLabel": "부천 오정구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/부천시/오정구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-부천시--원미구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "원미구",
+      "label": "부천 원미구",
+      "keywordBase": "부천원미구",
+      "route": "/areas/gyeonggi/부천시/원미구",
+      "segments": [
+        "gyeonggi",
+        "부천시",
+        "원미구"
+      ],
+      "parentId": "admin-gyeonggi-부천시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-부천시"
+      ],
+      "scopeLabel": "부천 원미구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/부천시/원미구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-성남시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "성남시",
+      "label": "성남",
+      "keywordBase": "성남",
+      "route": "/areas/gyeonggi/성남시",
+      "segments": [
+        "gyeonggi",
+        "성남시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "성남 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/성남시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-성남시--분당구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "분당구",
+      "label": "성남 분당구",
+      "keywordBase": "성남분당구",
+      "route": "/areas/gyeonggi/성남시/분당구",
+      "segments": [
+        "gyeonggi",
+        "성남시",
+        "분당구"
+      ],
+      "parentId": "admin-gyeonggi-성남시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-성남시"
+      ],
+      "scopeLabel": "성남 분당구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/성남시/분당구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-성남시--수정구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "수정구",
+      "label": "성남 수정구",
+      "keywordBase": "성남수정구",
+      "route": "/areas/gyeonggi/성남시/수정구",
+      "segments": [
+        "gyeonggi",
+        "성남시",
+        "수정구"
+      ],
+      "parentId": "admin-gyeonggi-성남시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-성남시"
+      ],
+      "scopeLabel": "성남 수정구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/성남시/수정구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-성남시--중원구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "중원구",
+      "label": "성남 중원구",
+      "keywordBase": "성남중원구",
+      "route": "/areas/gyeonggi/성남시/중원구",
+      "segments": [
+        "gyeonggi",
+        "성남시",
+        "중원구"
+      ],
+      "parentId": "admin-gyeonggi-성남시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-성남시"
+      ],
+      "scopeLabel": "성남 중원구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/성남시/중원구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-수원시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "수원시",
+      "label": "수원",
+      "keywordBase": "수원",
+      "route": "/areas/gyeonggi/수원시",
+      "segments": [
+        "gyeonggi",
+        "수원시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "수원 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/수원시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-수원시--권선구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "권선구",
+      "label": "수원 권선구",
+      "keywordBase": "수원권선구",
+      "route": "/areas/gyeonggi/수원시/권선구",
+      "segments": [
+        "gyeonggi",
+        "수원시",
+        "권선구"
+      ],
+      "parentId": "admin-gyeonggi-수원시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-수원시"
+      ],
+      "scopeLabel": "수원 권선구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/수원시/권선구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-수원시--영통구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "영통구",
+      "label": "수원 영통구",
+      "keywordBase": "수원영통구",
+      "route": "/areas/gyeonggi/수원시/영통구",
+      "segments": [
+        "gyeonggi",
+        "수원시",
+        "영통구"
+      ],
+      "parentId": "admin-gyeonggi-수원시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-수원시"
+      ],
+      "scopeLabel": "수원 영통구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/수원시/영통구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-수원시--장안구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "장안구",
+      "label": "수원 장안구",
+      "keywordBase": "수원장안구",
+      "route": "/areas/gyeonggi/수원시/장안구",
+      "segments": [
+        "gyeonggi",
+        "수원시",
+        "장안구"
+      ],
+      "parentId": "admin-gyeonggi-수원시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-수원시"
+      ],
+      "scopeLabel": "수원 장안구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/수원시/장안구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-수원시--팔달구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "팔달구",
+      "label": "수원 팔달구",
+      "keywordBase": "수원팔달구",
+      "route": "/areas/gyeonggi/수원시/팔달구",
+      "segments": [
+        "gyeonggi",
+        "수원시",
+        "팔달구"
+      ],
+      "parentId": "admin-gyeonggi-수원시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-수원시"
+      ],
+      "scopeLabel": "수원 팔달구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/수원시/팔달구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-시흥시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "시흥시",
+      "label": "시흥",
+      "keywordBase": "시흥",
+      "route": "/areas/gyeonggi/시흥시",
+      "segments": [
+        "gyeonggi",
+        "시흥시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "시흥 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/시흥시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안산시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "안산시",
+      "label": "안산",
+      "keywordBase": "안산",
+      "route": "/areas/gyeonggi/안산시",
+      "segments": [
+        "gyeonggi",
+        "안산시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "안산 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안산시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안산시--단원구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "단원구",
+      "label": "안산 단원구",
+      "keywordBase": "안산단원구",
+      "route": "/areas/gyeonggi/안산시/단원구",
+      "segments": [
+        "gyeonggi",
+        "안산시",
+        "단원구"
+      ],
+      "parentId": "admin-gyeonggi-안산시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-안산시"
+      ],
+      "scopeLabel": "안산 단원구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안산시/단원구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안산시--상록구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "상록구",
+      "label": "안산 상록구",
+      "keywordBase": "안산상록구",
+      "route": "/areas/gyeonggi/안산시/상록구",
+      "segments": [
+        "gyeonggi",
+        "안산시",
+        "상록구"
+      ],
+      "parentId": "admin-gyeonggi-안산시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-안산시"
+      ],
+      "scopeLabel": "안산 상록구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안산시/상록구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안성시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "안성시",
+      "label": "안성",
+      "keywordBase": "안성",
+      "route": "/areas/gyeonggi/안성시",
+      "segments": [
+        "gyeonggi",
+        "안성시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "안성 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안성시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안양시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "안양시",
+      "label": "안양",
+      "keywordBase": "안양",
+      "route": "/areas/gyeonggi/안양시",
+      "segments": [
+        "gyeonggi",
+        "안양시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "안양 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안양시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안양시--동안구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "동안구",
+      "label": "안양 동안구",
+      "keywordBase": "안양동안구",
+      "route": "/areas/gyeonggi/안양시/동안구",
+      "segments": [
+        "gyeonggi",
+        "안양시",
+        "동안구"
+      ],
+      "parentId": "admin-gyeonggi-안양시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-안양시"
+      ],
+      "scopeLabel": "안양 동안구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안양시/동안구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-안양시--만안구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "만안구",
+      "label": "안양 만안구",
+      "keywordBase": "안양만안구",
+      "route": "/areas/gyeonggi/안양시/만안구",
+      "segments": [
+        "gyeonggi",
+        "안양시",
+        "만안구"
+      ],
+      "parentId": "admin-gyeonggi-안양시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-안양시"
+      ],
+      "scopeLabel": "안양 만안구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/안양시/만안구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-양주시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "양주시",
+      "label": "양주",
+      "keywordBase": "양주",
+      "route": "/areas/gyeonggi/양주시",
+      "segments": [
+        "gyeonggi",
+        "양주시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "양주 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/양주시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-여주시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "여주시",
+      "label": "여주",
+      "keywordBase": "여주",
+      "route": "/areas/gyeonggi/여주시",
+      "segments": [
+        "gyeonggi",
+        "여주시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "여주 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/여주시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-오산시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "오산시",
+      "label": "오산",
+      "keywordBase": "오산",
+      "route": "/areas/gyeonggi/오산시",
+      "segments": [
+        "gyeonggi",
+        "오산시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "오산 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/오산시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-용인시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "용인시",
+      "label": "용인",
+      "keywordBase": "용인",
+      "route": "/areas/gyeonggi/용인시",
+      "segments": [
+        "gyeonggi",
+        "용인시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "용인 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/용인시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-용인시--기흥구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "기흥구",
+      "label": "용인 기흥구",
+      "keywordBase": "용인기흥구",
+      "route": "/areas/gyeonggi/용인시/기흥구",
+      "segments": [
+        "gyeonggi",
+        "용인시",
+        "기흥구"
+      ],
+      "parentId": "admin-gyeonggi-용인시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-용인시"
+      ],
+      "scopeLabel": "용인 기흥구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/용인시/기흥구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-용인시--수지구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "수지구",
+      "label": "용인 수지구",
+      "keywordBase": "용인수지구",
+      "route": "/areas/gyeonggi/용인시/수지구",
+      "segments": [
+        "gyeonggi",
+        "용인시",
+        "수지구"
+      ],
+      "parentId": "admin-gyeonggi-용인시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-용인시"
+      ],
+      "scopeLabel": "용인 수지구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/용인시/수지구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-용인시--처인구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "처인구",
+      "label": "용인 처인구",
+      "keywordBase": "용인처인구",
+      "route": "/areas/gyeonggi/용인시/처인구",
+      "segments": [
+        "gyeonggi",
+        "용인시",
+        "처인구"
+      ],
+      "parentId": "admin-gyeonggi-용인시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-용인시"
+      ],
+      "scopeLabel": "용인 처인구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/용인시/처인구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-의왕시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "의왕시",
+      "label": "의왕",
+      "keywordBase": "의왕",
+      "route": "/areas/gyeonggi/의왕시",
+      "segments": [
+        "gyeonggi",
+        "의왕시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "의왕 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/의왕시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-의정부시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "의정부시",
+      "label": "의정부",
+      "keywordBase": "의정부",
+      "route": "/areas/gyeonggi/의정부시",
+      "segments": [
+        "gyeonggi",
+        "의정부시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "의정부 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/의정부시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-이천시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "이천시",
+      "label": "이천",
+      "keywordBase": "이천",
+      "route": "/areas/gyeonggi/이천시",
+      "segments": [
+        "gyeonggi",
+        "이천시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "이천 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/이천시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-파주시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "파주시",
+      "label": "파주",
+      "keywordBase": "파주",
+      "route": "/areas/gyeonggi/파주시",
+      "segments": [
+        "gyeonggi",
+        "파주시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "파주 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/파주시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-평택시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "평택시",
+      "label": "평택",
+      "keywordBase": "평택",
+      "route": "/areas/gyeonggi/평택시",
+      "segments": [
+        "gyeonggi",
+        "평택시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "평택 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/평택시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-포천시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "포천시",
+      "label": "포천",
+      "keywordBase": "포천",
+      "route": "/areas/gyeonggi/포천시",
+      "segments": [
+        "gyeonggi",
+        "포천시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "포천 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/포천시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-하남시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "하남시",
+      "label": "하남",
+      "keywordBase": "하남",
+      "route": "/areas/gyeonggi/하남시",
+      "segments": [
+        "gyeonggi",
+        "하남시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "하남 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/하남시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-화성시",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "화성시",
+      "label": "화성",
+      "keywordBase": "화성",
+      "route": "/areas/gyeonggi/화성시",
+      "segments": [
+        "gyeonggi",
+        "화성시"
+      ],
+      "parentId": "root-gyeonggi",
+      "ancestors": [
+        "root-gyeonggi"
+      ],
+      "scopeLabel": "화성 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/화성시",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-화성시--동탄구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "동탄구",
+      "label": "화성 동탄구",
+      "keywordBase": "화성동탄구",
+      "route": "/areas/gyeonggi/화성시/동탄구",
+      "segments": [
+        "gyeonggi",
+        "화성시",
+        "동탄구"
+      ],
+      "parentId": "admin-gyeonggi-화성시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-화성시"
+      ],
+      "scopeLabel": "화성 동탄구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/화성시/동탄구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-화성시--만세구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "만세구",
+      "label": "화성 만세구",
+      "keywordBase": "화성만세구",
+      "route": "/areas/gyeonggi/화성시/만세구",
+      "segments": [
+        "gyeonggi",
+        "화성시",
+        "만세구"
+      ],
+      "parentId": "admin-gyeonggi-화성시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-화성시"
+      ],
+      "scopeLabel": "화성 만세구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/화성시/만세구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-화성시--병점구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "병점구",
+      "label": "화성 병점구",
+      "keywordBase": "화성병점구",
+      "route": "/areas/gyeonggi/화성시/병점구",
+      "segments": [
+        "gyeonggi",
+        "화성시",
+        "병점구"
+      ],
+      "parentId": "admin-gyeonggi-화성시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-화성시"
+      ],
+      "scopeLabel": "화성 병점구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/화성시/병점구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-gyeonggi-화성시--효행구",
+      "kind": "administrative-hub",
+      "rootKey": "gyeonggi",
+      "name": "효행구",
+      "label": "화성 효행구",
+      "keywordBase": "화성효행구",
+      "route": "/areas/gyeonggi/화성시/효행구",
+      "segments": [
+        "gyeonggi",
+        "화성시",
+        "효행구"
+      ],
+      "parentId": "admin-gyeonggi-화성시",
+      "ancestors": [
+        "root-gyeonggi",
+        "admin-gyeonggi-화성시"
+      ],
+      "scopeLabel": "화성 효행구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/gyeonggi/화성시/효행구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "root-incheon",
+      "kind": "service-root",
+      "rootKey": "incheon",
+      "name": "인천",
+      "label": "인천",
+      "keywordBase": "인천",
+      "route": "/areas/incheon",
+      "segments": [
+        "incheon"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "인천 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-검단구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "검단구",
+      "label": "인천 검단구",
+      "keywordBase": "인천검단구",
+      "route": "/areas/incheon/검단구",
+      "segments": [
+        "incheon",
+        "검단구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 검단구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/검단구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-계양구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "계양구",
+      "label": "인천 계양구",
+      "keywordBase": "인천계양구",
+      "route": "/areas/incheon/계양구",
+      "segments": [
+        "incheon",
+        "계양구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 계양구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/계양구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-남동구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "남동구",
+      "label": "인천 남동구",
+      "keywordBase": "인천남동구",
+      "route": "/areas/incheon/남동구",
+      "segments": [
+        "incheon",
+        "남동구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 남동구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/남동구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-미추홀구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "미추홀구",
+      "label": "인천 미추홀구",
+      "keywordBase": "인천미추홀구",
+      "route": "/areas/incheon/미추홀구",
+      "segments": [
+        "incheon",
+        "미추홀구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 미추홀구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/미추홀구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-부평구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "부평구",
+      "label": "인천 부평구",
+      "keywordBase": "인천부평구",
+      "route": "/areas/incheon/부평구",
+      "segments": [
+        "incheon",
+        "부평구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 부평구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/부평구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-서해구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "서해구",
+      "label": "인천 서해구",
+      "keywordBase": "인천서해구",
+      "route": "/areas/incheon/서해구",
+      "segments": [
+        "incheon",
+        "서해구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 서해구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/서해구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-연수구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "연수구",
+      "label": "인천 연수구",
+      "keywordBase": "인천연수구",
+      "route": "/areas/incheon/연수구",
+      "segments": [
+        "incheon",
+        "연수구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 연수구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/연수구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-영종구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "영종구",
+      "label": "인천 영종구",
+      "keywordBase": "인천영종구",
+      "route": "/areas/incheon/영종구",
+      "segments": [
+        "incheon",
+        "영종구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 영종구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/영종구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-incheon-제물포구",
+      "kind": "administrative-hub",
+      "rootKey": "incheon",
+      "name": "제물포구",
+      "label": "인천 제물포구",
+      "keywordBase": "인천제물포구",
+      "route": "/areas/incheon/제물포구",
+      "segments": [
+        "incheon",
+        "제물포구"
+      ],
+      "parentId": "root-incheon",
+      "ancestors": [
+        "root-incheon"
+      ],
+      "scopeLabel": "인천 제물포구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/incheon/제물포구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "root-seoul",
+      "kind": "service-root",
+      "rootKey": "seoul",
+      "name": "서울",
+      "label": "서울",
+      "keywordBase": "서울",
+      "route": "/areas/seoul",
+      "segments": [
+        "seoul"
+      ],
+      "parentId": null,
+      "ancestors": [],
+      "scopeLabel": "서울 운영권역 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-강남구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "강남구",
+      "label": "서울 강남구",
+      "keywordBase": "서울강남구",
+      "route": "/areas/seoul/강남구",
+      "segments": [
+        "seoul",
+        "강남구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 강남구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/강남구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-강동구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "강동구",
+      "label": "서울 강동구",
+      "keywordBase": "서울강동구",
+      "route": "/areas/seoul/강동구",
+      "segments": [
+        "seoul",
+        "강동구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 강동구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/강동구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-강북구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "강북구",
+      "label": "서울 강북구",
+      "keywordBase": "서울강북구",
+      "route": "/areas/seoul/강북구",
+      "segments": [
+        "seoul",
+        "강북구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 강북구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/강북구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-강서구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "강서구",
+      "label": "서울 강서구",
+      "keywordBase": "서울강서구",
+      "route": "/areas/seoul/강서구",
+      "segments": [
+        "seoul",
+        "강서구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 강서구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/강서구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-관악구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "관악구",
+      "label": "서울 관악구",
+      "keywordBase": "서울관악구",
+      "route": "/areas/seoul/관악구",
+      "segments": [
+        "seoul",
+        "관악구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 관악구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/관악구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-광진구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "광진구",
+      "label": "서울 광진구",
+      "keywordBase": "서울광진구",
+      "route": "/areas/seoul/광진구",
+      "segments": [
+        "seoul",
+        "광진구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 광진구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/광진구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-구로구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "구로구",
+      "label": "서울 구로구",
+      "keywordBase": "서울구로구",
+      "route": "/areas/seoul/구로구",
+      "segments": [
+        "seoul",
+        "구로구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 구로구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/구로구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-금천구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "금천구",
+      "label": "서울 금천구",
+      "keywordBase": "서울금천구",
+      "route": "/areas/seoul/금천구",
+      "segments": [
+        "seoul",
+        "금천구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 금천구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/금천구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-노원구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "노원구",
+      "label": "서울 노원구",
+      "keywordBase": "서울노원구",
+      "route": "/areas/seoul/노원구",
+      "segments": [
+        "seoul",
+        "노원구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 노원구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/노원구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-도봉구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "도봉구",
+      "label": "서울 도봉구",
+      "keywordBase": "서울도봉구",
+      "route": "/areas/seoul/도봉구",
+      "segments": [
+        "seoul",
+        "도봉구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 도봉구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/도봉구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-동대문구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "동대문구",
+      "label": "서울 동대문구",
+      "keywordBase": "서울동대문구",
+      "route": "/areas/seoul/동대문구",
+      "segments": [
+        "seoul",
+        "동대문구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 동대문구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/동대문구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-동작구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "동작구",
+      "label": "서울 동작구",
+      "keywordBase": "서울동작구",
+      "route": "/areas/seoul/동작구",
+      "segments": [
+        "seoul",
+        "동작구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 동작구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/동작구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-마포구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "마포구",
+      "label": "서울 마포구",
+      "keywordBase": "서울마포구",
+      "route": "/areas/seoul/마포구",
+      "segments": [
+        "seoul",
+        "마포구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 마포구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/마포구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-서대문구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "서대문구",
+      "label": "서울 서대문구",
+      "keywordBase": "서울서대문구",
+      "route": "/areas/seoul/서대문구",
+      "segments": [
+        "seoul",
+        "서대문구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 서대문구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/서대문구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-서초구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "서초구",
+      "label": "서울 서초구",
+      "keywordBase": "서울서초구",
+      "route": "/areas/seoul/서초구",
+      "segments": [
+        "seoul",
+        "서초구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 서초구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/서초구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-성동구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "성동구",
+      "label": "서울 성동구",
+      "keywordBase": "서울성동구",
+      "route": "/areas/seoul/성동구",
+      "segments": [
+        "seoul",
+        "성동구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 성동구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/성동구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-성북구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "성북구",
+      "label": "서울 성북구",
+      "keywordBase": "서울성북구",
+      "route": "/areas/seoul/성북구",
+      "segments": [
+        "seoul",
+        "성북구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 성북구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/성북구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-송파구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "송파구",
+      "label": "서울 송파구",
+      "keywordBase": "서울송파구",
+      "route": "/areas/seoul/송파구",
+      "segments": [
+        "seoul",
+        "송파구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 송파구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/송파구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-양천구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "양천구",
+      "label": "서울 양천구",
+      "keywordBase": "서울양천구",
+      "route": "/areas/seoul/양천구",
+      "segments": [
+        "seoul",
+        "양천구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 양천구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/양천구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-영등포구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "영등포구",
+      "label": "서울 영등포구",
+      "keywordBase": "서울영등포구",
+      "route": "/areas/seoul/영등포구",
+      "segments": [
+        "seoul",
+        "영등포구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 영등포구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/영등포구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-용산구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "용산구",
+      "label": "서울 용산구",
+      "keywordBase": "서울용산구",
+      "route": "/areas/seoul/용산구",
+      "segments": [
+        "seoul",
+        "용산구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 용산구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/용산구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-은평구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "은평구",
+      "label": "서울 은평구",
+      "keywordBase": "서울은평구",
+      "route": "/areas/seoul/은평구",
+      "segments": [
+        "seoul",
+        "은평구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 은평구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/은평구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-종로구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "종로구",
+      "label": "서울 종로구",
+      "keywordBase": "서울종로구",
+      "route": "/areas/seoul/종로구",
+      "segments": [
+        "seoul",
+        "종로구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 종로구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/종로구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-중구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "중구",
+      "label": "서울 중구",
+      "keywordBase": "서울중구",
+      "route": "/areas/seoul/중구",
+      "segments": [
+        "seoul",
+        "중구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 중구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/중구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    },
+    {
+      "id": "admin-seoul-중랑구",
+      "kind": "administrative-hub",
+      "rootKey": "seoul",
+      "name": "중랑구",
+      "label": "서울 중랑구",
+      "keywordBase": "서울중랑구",
+      "route": "/areas/seoul/중랑구",
+      "segments": [
+        "seoul",
+        "중랑구"
+      ],
+      "parentId": "root-seoul",
+      "ancestors": [
+        "root-seoul"
+      ],
+      "scopeLabel": "서울 중랑구 행정 기준 안내",
+      "source": {
+        "kind": "massagebom-region-semantics",
+        "route": "/areas/seoul/중랑구",
+        "note": "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
+      }
+    }
+  ]
+}
