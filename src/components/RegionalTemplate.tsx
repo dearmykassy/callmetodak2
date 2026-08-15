@@ -81,7 +81,6 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
             </nav>
             <p className={styles.kicker}>{content.hero.eyebrow}</p>
             <h1 id="region-title">{renderHeroTitle(content.h1)}</h1>
-            <p className={styles.heroLead}>{content.hero.lead}</p>
             <div className={styles.heroActions}>
               <a className={styles.primaryButton} href={OPERATING_FACTS.phone.href}>전화상담 <span aria-hidden="true">↗</span></a>
               <a className={styles.secondaryButton} href="#price">코스·가격 보기 <span aria-hidden="true">↓</span></a>

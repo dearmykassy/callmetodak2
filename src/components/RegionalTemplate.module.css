@@ -332,13 +332,16 @@
 
   .hero { min-height: 520px; }
   .hero::after { inset: 12px; }
-  .heroInner,
+  .heroInner { width: min(100% - 48px, 1180px); }
   .content { width: min(100% - 28px, 1180px); }
   .heroInner { min-height: 520px; padding: 22px 0 32px; }
+  .heroCopyLeft,
+  .heroCopyRight { align-items: stretch; }
+  .heroCopyRight .breadcrumbs { align-self: flex-end; }
   .breadcrumbs { max-width: 100%; gap: 4px; font-size: 9px; line-height: 1.4; }
   .breadcrumbs > * + *::before { margin-right: 4px; }
-  .kicker { font-size: 8px; letter-spacing: .14em; }
-  .hero h1 { max-width: 100%; margin-top: 7px; font-size: clamp(31px, 9.8vw, 37px); line-height: 1.06; letter-spacing: -.07em; overflow-wrap: normal; word-break: keep-all; text-wrap: balance; }
+  .kicker { align-self: stretch; font-size: 8px; letter-spacing: .14em; }
+  .hero h1 { max-width: 100%; margin-top: 10px; font-size: clamp(31px, 9.8vw, 37px); line-height: 1.06; letter-spacing: -.07em; overflow-wrap: normal; word-break: keep-all; text-wrap: balance; }
   .heroLead { max-width: 100%; margin-top: 14px; font-size: clamp(12px, 3.6vw, 14px); line-height: 1.65; }
   .heroActions { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
   .primaryButton,

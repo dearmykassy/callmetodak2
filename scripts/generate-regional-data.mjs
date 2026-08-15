@@ -113,6 +113,7 @@ const UNSUPPORTED_COPY = /관리사|도착|배정|방문|자택|홈케어|고객
 const OUTPUT_UNSUPPORTED_COPY = /관리사|도착|배정|방문|자택|홈케어|고객이\s*머무는\s*공간|집에서|집이라는|공간|이동|외출|매장|현장\s*진행|2인|두\s*명|동시\s*관리|커플|부부|일회용|소독|위생|365일|연중무휴|하루\s*종일|새벽|치료|회복|효능|건강|의료|테라피|출발비|출발금|보증금|송금|환불|사칭|sns|후기|평점|경력|수면|압|강도|몸|피로|긴장|이완|컨디션|근육|호흡|뻐근|가벼워|움직임|스트레칭|오일|150분/iu;
 const BRAND_LEAK = /마사지봄|스타토닥이|마사지러브/iu;
 const FORBIDDEN_MALE_TERM = /\uB0A8\uC131\uC804\uC6A9/u;
+const REDUNDANT_SCOPE_SENTENCE = /^현재 안내 범위는 .+입니다\.$/u;
 
 const compact = (value) => value.normalize("NFC").replace(/\s+/gu, "");
 const cityStem = (value) => value.endsWith("시") ? value.slice(0, -1) : value;
@@ -458,8 +459,11 @@ function buildMassageBomContent(region, source) {
   const seoHero = asRecord(seo.hero, `${region.route}:seo.hero`);
   const seoLead = asString(asRecord(seoHero.lead, `${region.route}:seo.hero.lead`).text, `${region.route}:seo.hero.lead.text`);
 
-  const heroLead = adaptedSentences(seoLead, source, region, "seo.hero.lead")[0];
-  if (!heroLead) throw new Error(`CALLME_SOURCE_HERO_UNSUPPORTED:${region.route}`);
+  const sourceHeroLead = adaptedSentences(seoLead, source, region, "seo.hero.lead")[0];
+  if (!sourceHeroLead) throw new Error(`CALLME_SOURCE_HERO_UNSUPPORTED:${region.route}`);
+  const heroLead = REDUNDANT_SCOPE_SENTENCE.test(sourceHeroLead)
+    ? `${region.label}의 지역 안내와 코스·가격, 전화상담 정보를 확인하세요.`
+    : sourceHeroLead;
 
   const trustSentences = asStrings(trust.paragraphs, `${region.route}:trust.paragraphs`)
     .flatMap((paragraph, index) => adaptedSentences(paragraph, source, region, `trust.${index}`));
@@ -633,6 +637,9 @@ function buildContent(regions, massageBomSources) {
 
 function assertDocumentSafety(document, region, source) {
   const serialized = JSON.stringify(document);
+  if (/현재 안내 범위는 .+입니다\./u.test(serialized)) {
+    throw new Error(`REDUNDANT_SCOPE_SENTENCE:${document.route}`);
+  }
   if (FORBIDDEN_MALE_TERM.test(serialized)) {
     throw new Error(`FORBIDDEN_MALE_TERM:${document.route}`);
   }
