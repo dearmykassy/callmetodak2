@@ -19,13 +19,13 @@ const HOME_METADATA_KEYWORDS = [
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: HOME_METADATA_TITLE, template: "%s | 콜미토닥이" },
-  description: "서울·인천·경기와 충청권 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 콜미토닥이에서 확인하세요.",
+  description: "서울·인천·경기·충청권·부산 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 콜미토닥이에서 확인하세요.",
   keywords: HOME_METADATA_KEYWORDS,
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
     title: HOME_METADATA_TITLE,
-    description: "서울·인천·경기와 충청권 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 확인하세요.",
+    description: "서울·인천·경기·충청권·부산 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 확인하세요.",
     type: "website",
     url: "/",
     locale: "ko_KR",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: HOME_METADATA_TITLE,
-    description: "서울·인천·경기와 충청권 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 확인하세요.",
+    description: "서울·인천·경기·충청권·부산 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 확인하세요.",
     ...(homeSocialImage ? { images: homeSocialImage } : {}),
   },
   icons: {

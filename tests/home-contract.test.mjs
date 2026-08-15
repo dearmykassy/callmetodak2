@@ -31,7 +31,7 @@ test("Callme Todaki home carries the approved operating slice", async () => {
   assert.match(page, /24시간 전화상담/);
   assert.match(page, /선입금 없는 현장 후불/);
   assert.match(page, /현장 카드 결제/);
-  for (const [name, route] of [["서울", "/areas/seoul"], ["인천", "/areas/incheon"], ["경기", "/areas/gyeonggi"], ["천안", "/areas/cheonan"], ["아산", "/areas/asan"], ["청주", "/areas/cheongju"], ["대전", "/areas/daejeon"]]) {
+  for (const [name, route] of [["서울", "/areas/seoul"], ["인천", "/areas/incheon"], ["경기", "/areas/gyeonggi"], ["천안", "/areas/cheonan"], ["아산", "/areas/asan"], ["청주", "/areas/cheongju"], ["대전", "/areas/daejeon"], ["부산", "/areas/busan"]]) {
     assert.match(page, new RegExp(`\\["${name}", "${route}"\\]`));
   }
   assert.match(page, /토닥이 · 여성전용마사지 · 여성전용출장마사지/);

@@ -55,6 +55,7 @@ const ROOTS = [
   { key: "asan", name: "아산", sourceKind: "massagebom-region-semantics" },
   { key: "cheongju", name: "청주", sourceKind: "star-verified-locality" },
   { key: "daejeon", name: "대전", sourceKind: "massagebom-region-semantics" },
+  { key: "busan", name: "부산", sourceKind: "massagebom-region-semantics" },
 ];
 
 const DISTRICTS = {
@@ -67,6 +68,7 @@ const DISTRICTS = {
   cheonan: ["동남구", "서북구"],
   cheongju: ["상당구", "서원구", "청원구", "흥덕구"],
   daejeon: ["대덕구", "동구", "서구", "유성구", "중구"],
+  busan: ["부산진구", "수영구", "해운대구"],
 };
 
 const GYEONGGI_CITIES = [
@@ -101,7 +103,69 @@ const SOURCE_ROOT_LABELS = {
   cheonan: "천안시",
   asan: "아산시",
   daejeon: "대전광역시",
+  busan: "부산광역시",
 };
+
+// Owner-requested search localities that sit below the original city/gu graph.
+// `sourceRoute` is an exact MassageBom semantic route unless `sourceKind` says
+// that only a nearby locality is used as writing reference. User-facing labels
+// remain the requested search terms even when the canonical segment differs.
+const EXTRA_LOCALITIES = [
+  ["간석", "incheon", ["incheon", "남동구", "간석동"], "/areas/incheon/남동구", "/areas/incheon/남동구/간석동"],
+  ["고덕", "gyeonggi", ["gyeonggi", "평택시", "고덕동"], "/areas/gyeonggi/평택시", "/areas/gyeonggi/평택시/고덕동"],
+  ["광교", "gyeonggi", ["gyeonggi", "수원시", "영통구", "광교동"], "/areas/gyeonggi/수원시/영통구", "/areas/gyeonggi/수원시/영통구/광교동"],
+  ["동탄", "gyeonggi", ["gyeonggi", "화성시", "동탄구", "동탄동"], "/areas/gyeonggi/화성시/동탄구", "/areas/gyeonggi/화성시/동탄구/동탄동"],
+  ["안중", "gyeonggi", ["gyeonggi", "평택시", "안중읍"], "/areas/gyeonggi/평택시", "/areas/gyeonggi/평택시/안중읍"],
+  ["위례", "gyeonggi", ["gyeonggi", "성남시", "수정구", "위례동"], "/areas/gyeonggi/성남시/수정구", "/areas/gyeonggi/성남시/수정구/위례동"],
+  ["인덕원", "gyeonggi", ["gyeonggi", "안양시", "동안구", "인덕원동"], "/areas/gyeonggi/안양시/동안구", "/areas/gyeonggi/안양시/동안구/인덕원동"],
+  ["판교", "gyeonggi", ["gyeonggi", "성남시", "분당구", "판교동"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/판교동"],
+  ["합정동", "seoul", ["seoul", "마포구", "합정동"], "/areas/seoul/마포구", "/areas/seoul/마포구/합정동"],
+  ["송탄", "gyeonggi", ["gyeonggi", "평택시", "송탄동"], "/areas/gyeonggi/평택시", "/areas/gyeonggi/평택시/송탄동"],
+  ["신도림", "seoul", ["seoul", "구로구", "신도림동"], "/areas/seoul/구로구", "/areas/seoul/구로구/신도림동"],
+  ["향남", "gyeonggi", ["gyeonggi", "화성시", "만세구", "향남읍"], "/areas/gyeonggi/화성시/만세구", "/areas/gyeonggi/화성시/만세구/향남읍"],
+  ["서정동", "gyeonggi", ["gyeonggi", "평택시", "서정동"], "/areas/gyeonggi/평택시", "/areas/gyeonggi/평택시/서정동"],
+  ["월미도", "incheon", ["incheon", "제물포구", "월미도"], "/areas/incheon/제물포구", "/areas/incheon/제물포구/연안동", "massagebom-nearest-locality-adaptation"],
+  ["이태원", "seoul", ["seoul", "용산구", "이태원동"], "/areas/seoul/용산구", "/areas/seoul/용산구/이태원동"],
+  ["홍대", "seoul", ["seoul", "마포구", "홍대"], "/areas/seoul/마포구", "/areas/seoul/마포구/서교동", "massagebom-nearest-locality-adaptation"],
+  ["건대", "seoul", ["seoul", "광진구", "건대"], "/areas/seoul/광진구", "/areas/seoul/광진구/화양동", "massagebom-nearest-locality-adaptation"],
+  ["논현동", "seoul", ["seoul", "강남구", "논현동"], "/areas/seoul/강남구", "/areas/seoul/강남구/논현동"],
+  ["삼성동", "seoul", ["seoul", "강남구", "삼성동"], "/areas/seoul/강남구", "/areas/seoul/강남구/삼성동"],
+  ["역삼동", "seoul", ["seoul", "강남구", "역삼동"], "/areas/seoul/강남구", "/areas/seoul/강남구/역삼동"],
+  ["신사동", "seoul", ["seoul", "강남구", "신사동"], "/areas/seoul/강남구", "/areas/seoul/강남구/신사동"],
+  ["신림", "seoul", ["seoul", "관악구", "신림동"], "/areas/seoul/관악구", "/areas/seoul/관악구/신림동"],
+  ["구로", "seoul", ["seoul", "구로구", "구로동"], "/areas/seoul/구로구", "/areas/seoul/구로구/구로동"],
+  ["망원동", "seoul", ["seoul", "마포구", "망원동"], "/areas/seoul/마포구", "/areas/seoul/마포구/망원동"],
+  ["상암", "seoul", ["seoul", "마포구", "상암동"], "/areas/seoul/마포구", "/areas/seoul/마포구/상암동"],
+  ["등촌동", "seoul", ["seoul", "강서구", "등촌동"], "/areas/seoul/강서구", "/areas/seoul/강서구/등촌동"],
+  ["부평", "incheon", ["incheon", "부평구", "부평동"], "/areas/incheon/부평구", "/areas/incheon/부평구/부평동"],
+  ["주안", "incheon", ["incheon", "미추홀구", "주안동"], "/areas/incheon/미추홀구", "/areas/incheon/미추홀구/주안동"],
+  ["송도", "incheon", ["incheon", "연수구", "송도동"], "/areas/incheon/연수구", "/areas/incheon/연수구/송도동"],
+  ["고잔동", "gyeonggi", ["gyeonggi", "안산시", "단원구", "고잔동"], "/areas/gyeonggi/안산시/단원구", "/areas/gyeonggi/안산시/단원구/고잔동"],
+  ["평촌", "gyeonggi", ["gyeonggi", "안양시", "동안구", "평촌동"], "/areas/gyeonggi/안양시/동안구", "/areas/gyeonggi/안양시/동안구/평촌동"],
+  ["인계동", "gyeonggi", ["gyeonggi", "수원시", "팔달구", "인계동"], "/areas/gyeonggi/수원시/팔달구", "/areas/gyeonggi/수원시/팔달구/인계동"],
+  ["범계", "gyeonggi", ["gyeonggi", "안양시", "동안구", "범계동"], "/areas/gyeonggi/안양시/동안구", "/areas/gyeonggi/안양시/동안구/범계동"],
+  ["병점", "gyeonggi", ["gyeonggi", "화성시", "병점구", "병점동"], "/areas/gyeonggi/화성시/병점구", "/areas/gyeonggi/화성시/병점구/병점동"],
+  ["여의도", "seoul", ["seoul", "영등포구", "여의동"], "/areas/seoul/영등포구", "/areas/seoul/영등포구/여의동"],
+  ["서현", "gyeonggi", ["gyeonggi", "성남시", "분당구", "서현동"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/서현동"],
+  ["야탑", "gyeonggi", ["gyeonggi", "성남시", "분당구", "야탑동"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/야탑동"],
+  ["모란", "gyeonggi", ["gyeonggi", "성남시", "중원구", "모란"], "/areas/gyeonggi/성남시/중원구", "/areas/gyeonggi/성남시/중원구/성남동", "massagebom-nearest-locality-adaptation"],
+  ["신갈", "gyeonggi", ["gyeonggi", "용인시", "기흥구", "신갈동"], "/areas/gyeonggi/용인시/기흥구", "/areas/gyeonggi/용인시/기흥구/신갈동"],
+  ["미금", "gyeonggi", ["gyeonggi", "성남시", "분당구", "미금"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/금곡동", "massagebom-nearest-locality-adaptation"],
+  ["정자", "gyeonggi", ["gyeonggi", "성남시", "분당구", "정자동"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/정자동"],
+  ["수내", "gyeonggi", ["gyeonggi", "성남시", "분당구", "수내동"], "/areas/gyeonggi/성남시/분당구", "/areas/gyeonggi/성남시/분당구/수내동"],
+  ["청라", "incheon", ["incheon", "서해구", "청라동"], "/areas/incheon/서해구", "/areas/incheon/서해구/청라동"],
+  ["월곶", "gyeonggi", ["gyeonggi", "시흥시", "월곶동"], "/areas/gyeonggi/시흥시", "/areas/gyeonggi/시흥시/월곶동"],
+  ["갈곶", "gyeonggi", ["gyeonggi", "오산시", "갈곶"], "/areas/gyeonggi/오산시", null, "callme-locality-fallback"],
+  ["시화", "gyeonggi", ["gyeonggi", "시흥시", "시화"], "/areas/gyeonggi/시흥시", "/areas/gyeonggi/시흥시/정왕동", "massagebom-nearest-locality-adaptation"],
+  ["잠실", "seoul", ["seoul", "송파구", "잠실동"], "/areas/seoul/송파구", "/areas/seoul/송파구/잠실동"],
+  ["소래포구", "incheon", ["incheon", "남동구", "소래포구"], "/areas/incheon/남동구", "/areas/incheon/남동구/논현동", "massagebom-nearest-locality-adaptation"],
+  ["인천공항", "incheon", ["incheon", "영종구", "인천공항"], "/areas/incheon/영종구", "/areas/incheon/영종구/운서동", "massagebom-nearest-locality-adaptation"],
+  ["수유리", "seoul", ["seoul", "강북구", "수유동"], "/areas/seoul/강북구", "/areas/seoul/강북구/수유동"],
+  ["중앙동", "gyeonggi", ["gyeonggi", "평택시", "중앙동"], "/areas/gyeonggi/평택시", "/areas/gyeonggi/평택시/중앙동"],
+  ["일산", "gyeonggi", ["gyeonggi", "고양시", "일산"], "/areas/gyeonggi/고양시", "/areas/gyeonggi/고양시/일산서구/일산동", "massagebom-nearest-locality-adaptation"],
+  ["서면", "busan", ["busan", "부산진구", "서면"], "/areas/busan/부산진구", "/areas/busan/부산진구/부전동", "massagebom-nearest-locality-adaptation"],
+  ["광안리", "busan", ["busan", "수영구", "광안리"], "/areas/busan/수영구", "/areas/busan/수영구/광안동", "massagebom-nearest-locality-adaptation"],
+];
 
 // Exclude source sentences that assert provider travel/arrival, an unsupported
 // program or locality detail, or a medical result. We drop them instead of
@@ -132,13 +196,18 @@ function makeRoute(segments) {
   return `/areas/${segments.join("/")}`;
 }
 
-function sourceFor(kind, route) {
+function sourceFor(kind, route, sourceRoute = undefined) {
+  const resolvedSourceRoute = sourceRoute === undefined
+    ? (kind === "massagebom-region-semantics" ? route : null)
+    : sourceRoute;
   return {
     kind,
-    route: kind === "massagebom-region-semantics" ? route : null,
+    route: resolvedSourceRoute,
     note: kind === "massagebom-region-semantics"
-      ? "Matching MassageBom administrative semantic route captured into this Callme-owned snapshot."
-      : "Cheongju locality uses a Callme-owned, locality-specific fallback; no MassageBom route is asserted.",
+      ? "Matching MassageBom locality semantics captured into this Callme-owned snapshot."
+      : kind === "massagebom-nearest-locality-adaptation"
+        ? "A nearby MassageBom locality is used only as semantic writing reference; this target remains Callme-owned."
+        : "Callme-owned locality-specific fallback; no exact MassageBom route is asserted.",
   };
 }
 
@@ -195,8 +264,7 @@ function materializeMassageBomBaseline() {
 }
 
 function joinMassageBomSources(regions, baseline) {
-  const expected = regions.filter((region) => region.source.kind === "massagebom-region-semantics");
-  if (expected.length !== 99) throw new Error("CALLME_MASSAGEBOM_EXPECTED_ROUTE_COUNT_INVALID");
+  const expected = regions.filter((region) => region.source.route);
 
   const sourceByRoute = new Map();
   for (const entry of baseline.entries) {
@@ -209,8 +277,8 @@ function joinMassageBomSources(regions, baseline) {
 
   const matched = new Map();
   for (const region of expected) {
-    const source = sourceByRoute.get(region.route);
-    if (!source) throw new Error(`CALLME_MASSAGEBOM_ROUTE_JOIN_FAILED:${region.route}`);
+    const source = sourceByRoute.get(region.source.route);
+    if (!source) throw new Error(`CALLME_MASSAGEBOM_ROUTE_JOIN_FAILED:${region.route}:${region.source.route}`);
     matched.set(region.route, source);
   }
   if (matched.size !== expected.length) throw new Error("CALLME_MASSAGEBOM_MATCH_COUNT_INVALID");
@@ -221,11 +289,11 @@ function buildRegions() {
   const regions = [];
   const rootsByKey = new Map(ROOTS.map((root) => [root.key, root]));
 
-  const add = ({ rootKey, segments, name, label, keywordBase, parentId = null, ancestors = [], sourceKind }) => {
+  const add = ({ rootKey, segments, name, label, keywordBase, parentId = null, ancestors = [], sourceKind, sourceRoute, kind }) => {
     const route = makeRoute(segments);
     const region = {
       id: parentId ? `admin-${rootKey}-${segments.slice(1).join("--")}` : `root-${rootKey}`,
-      kind: parentId ? "administrative-hub" : "service-root",
+      kind: kind ?? (parentId ? "administrative-hub" : "service-root"),
       rootKey,
       name,
       label,
@@ -235,7 +303,7 @@ function buildRegions() {
       parentId,
       ancestors,
       scopeLabel: parentId ? `${label} 행정 기준 안내` : `${label} 운영권역 안내`,
-      source: sourceFor(sourceKind, route),
+      source: sourceFor(sourceKind, route, sourceRoute),
     };
     regions.push(region);
     return region;
@@ -252,7 +320,7 @@ function buildRegions() {
     });
   }
 
-  for (const rootKey of ["seoul", "incheon", "cheonan", "cheongju", "daejeon"]) {
+  for (const rootKey of ["seoul", "incheon", "cheonan", "cheongju", "daejeon", "busan"]) {
     const root = regions.find((region) => region.id === `root-${rootKey}`);
     const rootInfo = rootsByKey.get(rootKey);
     for (const district of DISTRICTS[rootKey]) {
@@ -295,6 +363,26 @@ function buildRegions() {
         sourceKind: "massagebom-region-semantics",
       });
     }
+  }
+
+  const regionByRoute = new Map(regions.map((region) => [region.route, region]));
+  for (const [label, rootKey, segments, parentRoute, sourceRoute, sourceKind = "massagebom-region-semantics"] of EXTRA_LOCALITIES) {
+    const parent = regionByRoute.get(parentRoute);
+    if (!parent) throw new Error(`CALLME_EXTRA_PARENT_MISSING:${label}:${parentRoute}`);
+    const ancestors = [...parent.ancestors, parent.id];
+    const region = add({
+      rootKey,
+      segments,
+      name: segments.at(-1),
+      label,
+      keywordBase: label,
+      parentId: parent.id,
+      ancestors,
+      sourceKind,
+      sourceRoute,
+      kind: "locality-page",
+    });
+    regionByRoute.set(region.route, region);
   }
 
   return regions.sort((left, right) => left.route.localeCompare(right.route, "ko"));
@@ -565,7 +653,7 @@ function buildMassageBomContent(region, source) {
   };
 }
 
-function buildCheongjuFallbackContent(region) {
+function buildCallmeFallbackContent(region) {
   const seed = stableHash(region.route);
   const keywords = keywordSet(region);
   const heroLead = pick([
@@ -586,7 +674,7 @@ function buildCheongjuFallbackContent(region) {
     intro: {
       heading: `${region.label} 지역 안내`,
       paragraphs: [
-        `${region.label} 페이지는 동·읍·면이 아닌 현재 경로의 행정시·행정구 기준으로 구성했습니다. 서비스 주소가 이 경로와 맞는지 먼저 확인하세요.`,
+        `${region.label} 페이지는 해당 상위 지역에서 이어지는 검색 지역 정보를 기준으로 구성했습니다. 서비스 주소가 이 경로와 맞는지 먼저 확인하세요.`,
         `${region.label}에서 필요한 시간과 코스 정보는 가격표와 전화상담 안내를 함께 살펴보세요. 희망 시각과 코스 후보를 정리하면 상담이 간결합니다.`,
       ],
     },
@@ -623,12 +711,12 @@ function buildCheongjuFallbackContent(region) {
 
 function buildContent(regions, massageBomSources) {
   return regions.map((region) => {
-    if (region.source.kind === "massagebom-region-semantics") {
+    if (region.source.route) {
       const source = massageBomSources.get(region.route);
       if (!source) throw new Error(`CALLME_MASSAGEBOM_SOURCE_MISSING:${region.route}`);
       return buildMassageBomContent(region, source);
     }
-    return buildCheongjuFallbackContent(region);
+    return buildCallmeFallbackContent(region);
   });
 }
 
@@ -661,20 +749,22 @@ function assertDocumentSafety(document, region, source) {
 function assertSnapshot(regions, documents, massageBomSources) {
   const roots = regions.filter((region) => region.kind === "service-root");
   const admins = regions.filter((region) => region.kind === "administrative-hub");
+  const localities = regions.filter((region) => region.kind === "locality-page");
   const massageBom = regions.filter((region) => region.source.kind === "massagebom-region-semantics");
+  const adapted = regions.filter((region) => region.source.kind === "massagebom-nearest-locality-adaptation");
   const star = regions.filter((region) => region.source.kind === "star-verified-locality");
+  const fallback = regions.filter((region) => region.source.kind === "callme-locality-fallback");
   const unique = (values, code) => {
     if (new Set(values).size !== values.length) throw new Error(code);
   };
 
-  if (regions.length !== 104 || roots.length !== 7 || admins.length !== 97) throw new Error("REGION_COUNT_MISMATCH");
-  if (massageBom.length !== 99 || star.length !== 5 || massageBomSources.size !== 99) {
+  if (regions.length !== 162 || roots.length !== 8 || admins.length !== 100 || localities.length !== 54) {
+    throw new Error("REGION_COUNT_MISMATCH");
+  }
+  if (massageBom.length !== 145 || adapted.length !== 11 || star.length !== 5 || fallback.length !== 1 || massageBomSources.size !== 156) {
     throw new Error("SOURCE_COUNT_MISMATCH");
   }
   if (OPERATING_FACTS.cardPayment !== "현장 카드 결제 가능") throw new Error("CARD_PAYMENT_FACT_MISMATCH");
-  if (regions.some((region) => region.segments.some((segment) => /[군동읍면]$/u.test(segment)))) {
-    throw new Error("FORBIDDEN_LOCALITY_ROUTE");
-  }
   if (EXCLUDED_COUNTY_ROUTES.some((route) => regions.some((region) => region.route === route))) {
     throw new Error("EXCLUDED_COUNTY_INCLUDED");
   }
@@ -725,13 +815,16 @@ assertSnapshot(regions, documents, massageBomSources);
 const regionalSnapshot = {
   schemaVersion: 1,
   status: "CALLME_OWNED_REGION_SNAPSHOT",
-  scope: "7 service roots plus 97 administrative city/gu routes; dong/eup/myeon/gun excluded",
+  scope: "8 service roots, 100 administrative hubs, and 54 owner-requested locality pages",
   counts: {
     regions: regions.length,
     serviceRoots: regions.filter((region) => region.kind === "service-root").length,
     administrativeHubs: regions.filter((region) => region.kind === "administrative-hub").length,
+    localityPages: regions.filter((region) => region.kind === "locality-page").length,
     massageBomSemanticRoutes: regions.filter((region) => region.source.kind === "massagebom-region-semantics").length,
+    massageBomAdaptedRoutes: regions.filter((region) => region.source.kind === "massagebom-nearest-locality-adaptation").length,
     starVerifiedCheongjuRoutes: regions.filter((region) => region.source.kind === "star-verified-locality").length,
+    callmeFallbackRoutes: regions.filter((region) => region.source.kind === "callme-locality-fallback").length,
   },
   excludedCountyRoutes: EXCLUDED_COUNTY_ROUTES,
   operatingFacts: OPERATING_FACTS,
@@ -745,6 +838,7 @@ const contentSnapshot = {
     source: "massagebom-live-canonical-generators",
     massageBomMatchedRoutes: massageBomSources.size,
     cheongjuFallbackRoutes: regions.filter((region) => region.rootKey === "cheongju").length,
+    callmeFallbackRoutes: regions.filter((region) => region.source.kind === "callme-locality-fallback").length,
   },
   counts: {
     documents: documents.length,
@@ -762,4 +856,8 @@ await Promise.all([
   writeFile(path.join(DATA_DIR, "region-content.generated.json"), `${JSON.stringify(contentSnapshot, null, 2)}\n`),
 ]);
 
-console.log(`CALLME_REGION_SNAPSHOT_OK regions=${regions.length} roots=7 admin=97 massagebom=99 cheongju=5`);
+console.log(
+  `CALLME_REGION_SNAPSHOT_OK regions=${regions.length} roots=${regionalSnapshot.counts.serviceRoots}`
+  + ` admin=${regionalSnapshot.counts.administrativeHubs} localities=${regionalSnapshot.counts.localityPages}`
+  + ` massagebom=${massageBomSources.size} fallback=${regionalSnapshot.counts.callmeFallbackRoutes}`,
+);

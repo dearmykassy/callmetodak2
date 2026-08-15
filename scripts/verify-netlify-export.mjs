@@ -74,13 +74,12 @@ const regionalContentByRoute = new Map(
 );
 const expectedRoutes = [...fixedRoutes, ...blogRoutes, ...regionalRoutes];
 
-assert.equal(expectedRoutes.length, 112, "The release must expose 112 public URLs");
-assert.equal(new Set(expectedRoutes).size, 112, "The release URL graph must be unique");
+assert.equal(new Set(expectedRoutes).size, expectedRoutes.length, "The release URL graph must be unique");
 
 const sitemap = await readFile(path.join(OUTPUT_DIR, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gu)].map((match) => match[1]);
-assert.equal(sitemapUrls.length, 112, "The sitemap must contain 112 URLs");
-assert.equal(new Set(sitemapUrls).size, 112, "The sitemap must not duplicate URLs");
+assert.equal(sitemapUrls.length, expectedRoutes.length, "The sitemap must contain every public URL");
+assert.equal(new Set(sitemapUrls).size, expectedRoutes.length, "The sitemap must not duplicate URLs");
 assert.deepEqual(
   new Set(sitemapUrls.map((url) => normalizeRoute(new URL(url).pathname))),
   new Set(expectedRoutes.map(normalizeRoute)),
@@ -158,4 +157,4 @@ const exportedWebpFiles = (await listFiles(path.join(OUTPUT_DIR, "images", "call
 assert.equal(exportedWebpFiles.length, 57, "Netlify export must include 57 WebP files");
 for (const webpFile of webpFiles) await assertRegularFile(path.join(OUTPUT_DIR, webpFile));
 
-process.stdout.write("Verified Netlify export: 112 URLs, 19 active originals, 57 WebP assets.\n");
+process.stdout.write(`Verified Netlify export: ${expectedRoutes.length} URLs, 19 active originals, 57 WebP assets.\n`);

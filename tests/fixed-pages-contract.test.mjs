@@ -19,10 +19,12 @@ test("fixed pages retain the locked Callme operating facts", async () => {
     ["아산", "/areas/asan"],
     ["청주", "/areas/cheongju"],
     ["대전", "/areas/daejeon"],
+    ["부산", "/areas/busan"],
   ]) {
     assert.match(areas, new RegExp(`name: "${name}", route: "${route}"`, "u"));
   }
-  assert.match(areas, /동·읍·면·군 페이지는 만들지 않습니다/);
+  assert.match(areas, /상위 지역에서 연결 지역을 확인하세요\./u);
+  assert.match(areas, /각 지역 페이지 하단 카드에서 요청하신 세부 지역으로 이동할 수 있습니다\./u);
   assert.deepEqual(regions.operatingFacts.courses, [
     { name: "센슈얼 감성 테라피", items: [[60, 120000], [90, 150000], [120, 180000]] },
   ]);

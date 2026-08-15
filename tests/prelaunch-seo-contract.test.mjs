@@ -31,21 +31,26 @@ test("fixed pages use distinct production metadata and areas links service roots
   });
   assert.equal(new Set(openGraphTitles).size, 4);
   assert.match(sources[0], /href=\{area\.route\}/u);
-  for (const route of ["/areas/seoul", "/areas/incheon", "/areas/gyeonggi", "/areas/cheonan", "/areas/asan", "/areas/cheongju", "/areas/daejeon"]) {
+  for (const route of ["/areas/seoul", "/areas/incheon", "/areas/gyeonggi", "/areas/cheonan", "/areas/asan", "/areas/cheongju", "/areas/daejeon", "/areas/busan"]) {
     assert.match(sources[0], new RegExp(`route: "${route}"`, "u"));
   }
 });
 
 test("production robots allow crawling while sitemap enumerates every public route", async () => {
-  const [sitemap, robots, snapshot, site] = await Promise.all([
+  const [sitemap, robots, snapshot, blogSnapshot, site] = await Promise.all([
     read("app/sitemap.ts"),
     read("app/robots.ts"),
     read("src/data/regions.generated.json"),
+    read("src/data/blog.generated.json"),
     read("src/data/site.ts"),
   ]);
   const { regions } = JSON.parse(snapshot);
+  const { posts } = JSON.parse(blogSnapshot);
 
-  assert.equal(regions.length, 104);
+  assert.equal(regions.length, 162);
+  assert.equal(regions.filter((region) => region.route.startsWith("/areas/busan")).length, 6);
+  assert.equal(posts.length, 2);
+  assert.equal(6 + posts.length + regions.length, 170, "the public sitemap must contain the expanded 170-URL graph");
   assert.match(sitemap, /const fixedRoutes = \["\/", "\/areas", "\/pricing", "\/guide", "\/notice", "\/blog"\]/u);
   assert.match(sitemap, /BLOG_POSTS\.map\(getBlogPostRoute\)/u);
   assert.match(sitemap, /REGIONS\.map\(\(region\) => region\.route\)/u);

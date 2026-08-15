@@ -1,7 +1,7 @@
 import contentJson from "./region-content.generated.json";
 import regionsJson from "./regions.generated.json";
 
-export type RegionKind = "service-root" | "administrative-hub";
+export type RegionKind = "service-root" | "administrative-hub" | "locality-page";
 
 export type CallmeRegion = {
   id: string;
@@ -16,7 +16,11 @@ export type CallmeRegion = {
   ancestors: string[];
   scopeLabel: string;
   source: {
-    kind: "massagebom-region-semantics" | "star-verified-locality";
+    kind:
+      | "massagebom-region-semantics"
+      | "massagebom-nearest-locality-adaptation"
+      | "star-verified-locality"
+      | "callme-locality-fallback";
     route: string | null;
     note: string;
   };
@@ -49,8 +53,11 @@ type RegionalSnapshot = {
     regions: number;
     serviceRoots: number;
     administrativeHubs: number;
+    localityPages: number;
     massageBomSemanticRoutes: number;
+    massageBomAdaptedRoutes: number;
     starVerifiedCheongjuRoutes: number;
+    callmeFallbackRoutes: number;
   };
   operatingFacts: OperatingFacts;
   regions: CallmeRegion[];

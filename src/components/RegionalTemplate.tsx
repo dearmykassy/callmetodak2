@@ -194,7 +194,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
                   <p className={styles.kicker}>DIRECTORY</p>
                   <h2 id="child-regions-title">{region.label}에서 이어지는 지역</h2>
                 </div>
-                <p>현재 행정 경로 아래에서 다음 지역을 선택해 안내를 이어가세요.</p>
+                <p>현재 지역 아래에서 다음 지역을 선택해 안내를 이어가세요.</p>
               </div>
               <ul className={styles.regionGrid}>
                 {childRegions.map((child, index) => (
