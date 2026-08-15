@@ -2,8 +2,7 @@
 .shell { max-width: 1120px; min-height: calc(100vh - 12px); margin: auto; overflow: hidden; border: 1px solid #6f343d; border-radius: 18px 18px 8px 8px; background: var(--wine); box-shadow: 0 28px 90px #0008; }
 .pageBar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 68px; padding: 0 clamp(18px, 4vw, 46px); border-bottom: 1px solid #70384080; background: linear-gradient(100deg, #1a0a0eeb, #301219d9); backdrop-filter: blur(16px); }
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; color: var(--cream); font-size: 15px; font-weight: 900; letter-spacing: -0.05em; }
-.brandMark { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 9px; background: linear-gradient(135deg, #a87818, var(--light)); }
-.brandMark span { width: 7px; height: 14px; border-radius: 999px 2px 999px 2px; background: #291114; transform: rotate(-38deg); }
+.brandMark { display: block; width: 31px; height: 31px; flex: 0 0 auto; border-radius: 9px; object-fit: contain; }
 .pageLinks { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
 .pageLinks a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 11px; border: 1px solid transparent; border-radius: 999px; color: #d7b9bc; font-size: 11px; font-weight: 850; white-space: nowrap; }
 .pageLinks a:hover { border-color: #d8ac4270; color: var(--light); }

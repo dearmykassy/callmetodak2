@@ -17,7 +17,7 @@ export default function BlogLayout({ children }: Readonly<{ children: React.Reac
       <div className={styles.shell}>
         <header className={styles.pageBar}>
           <Link className={styles.brand} href="/" aria-label="콜미토닥이 홈">
-            <span className={styles.brandMark} aria-hidden="true"><span /></span>
+            <img className={styles.brandMark} src="/callme-todaki-mark.svg" alt="" width="31" height="31" aria-hidden="true" />
             <span>콜미토닥이</span>
           </Link>
           <nav className={styles.pageLinks} aria-label="페이지 이동">

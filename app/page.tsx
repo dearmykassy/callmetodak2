@@ -45,7 +45,7 @@ export default function Home() {
     <main className="page-canvas">
       <div className="site-shell">
         <header className={`topbar${homeHeroImage ? " image-header" : ""}`} style={getImageHeaderStyle(homeHeroImage)}>
-          <a className="logo" href="#top" aria-label="콜미토닥이 홈"><span className="logo-mark" aria-hidden="true"><span /></span><span>콜미토닥이</span></a>
+          <a className="logo" href="#top" aria-label="콜미토닥이 홈"><img className="logo-mark" src="/callme-todaki-mark.svg" alt="" width="34" height="34" aria-hidden="true" /><span>콜미토닥이</span></a>
           <div className="header-actions"><Link className="header-link" href="/notice">공지사항</Link><a className="header-button" href={TEL}><span className="button-dot" aria-hidden="true" /> 전화상담</a></div>
         </header>
 
@@ -76,7 +76,7 @@ export default function Home() {
           <section className="review-section" aria-label="신뢰 안내"><div className="section-title-row"><div><span className="section-kicker">TRUST GUIDE</span><h2>운영 기준을 먼저 보여드립니다</h2></div><span className="review-mark">CALLME</span></div><div className="review-summary"><strong>3가지</strong><span>상담 · 결제 · 지역 확인</span></div><div className="review-grid"><article><div><span>상담</span><small>24H</small></div><p>상담 전 지역과 시간을 먼저 확인합니다.</p><strong>전화상담</strong></article><article><div><span>결제</span><small>ON SITE</small></div><p>선입금 없이 현장 후불로 진행합니다.</p><strong>현장 결제</strong></article><article><div><span>지역</span><small>AREA</small></div><p>시·구 기준으로 지역 안내를 준비합니다.</p><strong>지역 확인</strong></article></div></section>
           <section className="faq-section" id="faq"><span className="section-kicker">FAQ</span><h2>자주 묻는 질문</h2><div className="faq-list">{faq.map(([question, answer], index) => <details key={question} open={index === 0}><summary><span>{question}</span><span className="faq-icon">+</span></summary><p>{answer}</p></details>)}</div></section>
         </div>
-        <footer className="footer"><a className="logo" href="#top" aria-label="콜미토닥이 홈"><span className="logo-mark" aria-hidden="true"><span /></span><span>콜미토닥이</span></a><p>서울·인천·경기와 충청권 여성전용 출장마사지 안내 · 지역과 시간은 전화로 확인해 주세요.</p><div><span>전화상담 {PHONE}</span><span>© 콜미토닥이</span></div></footer>
+        <footer className="footer"><a className="logo" href="#top" aria-label="콜미토닥이 홈"><img className="logo-mark" src="/callme-todaki-mark.svg" alt="" width="34" height="34" aria-hidden="true" /><span>콜미토닥이</span></a><p>서울·인천·경기와 충청권 여성전용 출장마사지 안내 · 지역과 시간은 전화로 확인해 주세요.</p><div><span>전화상담 {PHONE}</span><span>© 콜미토닥이</span></div></footer>
       </div>
       <a className="floating-button" href={TEL}><span className="button-icon" aria-hidden="true">●</span>전화상담</a>
     </main>

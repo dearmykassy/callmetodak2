@@ -55,19 +55,10 @@
 .brandMark {
   width: 34px;
   height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #a87818, #f3d87d);
-}
-
-.brandMark i {
-  width: 8px;
-  height: 15px;
   display: block;
-  border-radius: 999px 2px 999px 2px;
-  background: #291114;
-  transform: rotate(-38deg);
+  flex: 0 0 auto;
+  border-radius: 10px;
+  object-fit: contain;
 }
 
 .headerNotice,

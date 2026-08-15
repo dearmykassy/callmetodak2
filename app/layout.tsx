@@ -38,8 +38,9 @@ export const metadata: Metadata = {
     ...(homeSocialImage ? { images: homeSocialImage } : {}),
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/callme-todaki-mark.svg?v=2", type: "image/svg+xml" }],
+    shortcut: "/callme-todaki-mark.svg?v=2",
+    apple: "/callme-todaki-mark.svg?v=2",
   },
 };
 

@@ -45,7 +45,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
       <div className={styles.frame}>
         <header className={`${styles.topbar}${heroImage ? ` ${styles.imageHeader}` : ""}`} style={getImageHeaderStyle(heroImage)}>
           <Link className={styles.brand} href="/" aria-label="콜미토닥이 홈">
-            <span className={styles.brandMark} aria-hidden="true"><i /></span>
+            <img className={styles.brandMark} src="/callme-todaki-mark.svg" alt="" width="34" height="34" aria-hidden="true" />
             <span>콜미토닥이</span>
           </Link>
           <div className={styles.headerLinks}>
