@@ -21,6 +21,8 @@ test("Callme blog keeps two distinct, substantive, independently written guides"
   assert.equal(new Set(posts.map((post) => post.h1)).size, 2);
 
   for (const post of posts) {
+    assert.equal(post.publishedAt, "2026-08-15T13:11:46+09:00");
+    assert.equal(post.modifiedAt, post.publishedAt);
     const articleText = [post.intro, ...post.sections.flatMap((section) => section.paragraphs)].join("");
     assert.ok(articleText.length >= 900 && articleText.length <= 1400, `${post.slug} body must be 900–1400 characters`);
     assert.match(articleText, /24시간 전화상담/u);
@@ -46,6 +48,8 @@ test("blog routes use production-indexable metadata, JSON-LD, and required inter
   assert.match(postPage, /generateMetadata/u);
   assert.match(postPage, /robots: \{ index: true, follow: true \}/u);
   assert.match(postPage, /"@type": "BlogPosting"/u);
+  assert.match(postPage, /datePublished: post\.publishedAt/u);
+  assert.match(postPage, /dateModified: post\.modifiedAt/u);
   assert.match(postPage, /href="\/areas"/u);
   assert.match(postPage, /href="tel:05082023906"/u);
   assert.equal((postPage.match(/images: \[\]/gu) ?? []).length, 2);

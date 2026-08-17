@@ -1,6 +1,6 @@
 # 콜미토닥이 작업 다이어리
 
-## 현재 상태 — 2026-08-15
+## 현재 상태 — 2026-08-17
 
 - 새 프로젝트 루트: `/Users/ssm/Documents/Codex/callme-todaki`
 - Template1에서 복제한 Vinext/Cloudflare Sites 구조를 사용한다.
@@ -8,9 +8,41 @@
 - 오너 지역·검색어·이미지 범위는 `docs/OWNER_BRIEF.md`에 잠갔다.
 - 홈·고정 4페이지·지역 162페이지의 콘텐츠와 메타데이터를 구현했다.
 - 콜미토닥이 전용 원본 19장을 검수했고, 지역 18장은 `14×6 + 4×5`로 104개 경로에 배정했다.
-- 57개 반응형 WebP와 이미지 매니페스트를 활성화했다. 공개·배포 전 상태라 noindex를 유지한다.
+- 57개 반응형 WebP와 이미지 매니페스트를 활성화했다.
+- `SUPERSEDED (2026-08-15 production launch)`: 공개·배포 전 `noindex` 상태는
+  실제 `https://callmetodak2.kr` 배포와 index/follow·robots Allow 정책으로
+  대체됐다.
+- 2026-08-17 `/rss.xml` 2건과 170개 sitemap URL의 실제 trailing-slash
+  canonical 정렬을 구현·검증해 운영 릴리스 변경으로 묶었다.
 
 ## 활동 기록 — 최신순
+
+### 2026-08-17 — RSS 구현 및 Google 하위 URL 색인 기술 감사
+
+- 사용자 지시: 네이버 제출용 RSS를 만들고, Google `site:` 검색에서 홈만 보이는
+  원인이 robots·canonical·sitemap 등 기술 차단인지 확인해 명확한 결함을 고친다.
+- 운영 증거: `https://callmetodak2.kr`의 홈·지역·블로그 대표 URL은 trailing-slash
+  주소에서 HTTP 200, `index, follow`, self-canonical·same-origin OG를 반환한다.
+  `robots.txt`는 `Allow: /`, sitemap은 same-origin 170 URL이며 X-Robots/noindex는
+  없다. 정적 홈→8개 광역→하위 지역과 블로그 내부 링크도 실제 200 canonical
+  trailing-slash 주소로 렌더된다.
+- 확인된 결함: 운영 sitemap의 홈 외 169개 URL은 슬래시 없는 주소라 모두 실제
+  200 canonical 대신 301 별칭을 가리켰다. `canonicalUrl()`로 sitemap 170개를
+  실제 trailing-slash 200 주소로 정렬하고 BlogPosting JSON-LD도 같은 canonical과
+  실제 최초 운영 commit 시각을 사용하도록 수정했다.
+- RSS: 2026-08-15 최초 운영 commit `eadecf8`의 실제 시각을 두 글의
+  `publishedAt/modifiedAt`으로 기록했다. `/rss.xml`은 블로그 2건의 본문 전체,
+  same-origin canonical/GUID, `ko-KR`, 안정적인 lastBuildDate를 제공하며 지역
+  162개는 sitemap에만 둔다. 루트 layout에 RSS autodiscovery를 정확히 1개 넣었다.
+- 검증: RSS focused 2/2, 전체 test 22/22, `tsc --noEmit`, lint 오류 0(기존 img
+  warning 4), Netlify 정적 build 175페이지, built audit 170 canonical URL·RSS
+  item 2·19원본·57 WebP, `xmllint`가 통과했다. `out/rss.xml`은 7,914 bytes이며
+  lastBuildDate는 `Sat, 15 Aug 2026 04:11:46 GMT`다. 최초 sandbox build는 내부
+  port 제한으로 실패했고 동일 명령을 허용 환경에서 재실행해 PASS했다.
+- 판정/후속 확인: robots/noindex/누락 static HTML 같은 하위 페이지 전면 차단은
+  없다. `site:`는 색인 URL 전수를 보장하지 않으므로 개별 URL은 Search Console
+  URL 검사로 판단한다. 배포 뒤 운영 `/sitemap.xml`과 `/rss.xml`의 200 응답 및
+  Search Console 재처리를 확인한다.
 
 ### 2026-08-16 08:28 KST — GA4 페이지·전화 CTA 계측 스캐폴딩
 

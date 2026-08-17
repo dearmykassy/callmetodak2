@@ -55,7 +55,8 @@ test("production robots allow crawling while sitemap enumerates every public rou
   assert.match(sitemap, /BLOG_POSTS\.map\(getBlogPostRoute\)/u);
   assert.match(sitemap, /REGIONS\.map\(\(region\) => region\.route\)/u);
   assert.match(site, /https:\/\/callmetodak2\.kr/u);
-  assert.match(sitemap, /import \{ SITE_URL \} from "@\/src\/data\/site"/u);
+  assert.match(sitemap, /import \{ canonicalUrl \} from "@\/src\/data\/site"/u);
+  assert.match(sitemap, /url: canonicalUrl\(route\)/u);
   assert.match(robots, /userAgent: "\*"/u);
   assert.match(robots, /allow: "\/"/u);
   assert.doesNotMatch(robots, /disallow: "\/"/u);

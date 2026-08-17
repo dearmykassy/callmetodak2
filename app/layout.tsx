@@ -61,6 +61,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="콜미토닥이 블로그 RSS"
+          href="/rss.xml"
+        />
+      </head>
       <body>
         {children}
         {GA_MEASUREMENT_ID ? (

@@ -1,5 +1,4 @@
 import blogJson from "./blog.generated.json";
-import { SITE_URL } from "./site";
 
 export type BlogSection = {
   heading: string;
@@ -10,6 +9,8 @@ export type BlogPost = {
   slug: string;
   title: string;
   description: string;
+  publishedAt: string;
+  modifiedAt: string;
   h1: string;
   eyebrow: string;
   summary: string;
@@ -35,5 +36,3 @@ export function getBlogPost(slug: string): BlogPost | null {
 export function getBlogPostRoute(post: Pick<BlogPost, "slug">): string {
   return `/blog/${post.slug}`;
 }
-
-export const BLOG_SITE_URL = SITE_URL;

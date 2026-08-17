@@ -52,6 +52,15 @@ function metadataValue(html, expression, label) {
   return value;
 }
 
+function escapeXml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
+
 async function listFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const descendants = await Promise.all(entries.map(async (entry) => {
@@ -85,12 +94,56 @@ assert.deepEqual(
   new Set(expectedRoutes.map(normalizeRoute)),
   "The sitemap must match the static route graph",
 );
-for (const url of sitemapUrls) assert.equal(new URL(url).origin, SITE_URL, "Sitemap URL must use production domain");
+for (const url of sitemapUrls) {
+  const parsed = new URL(url);
+  assert.equal(parsed.origin, SITE_URL, "Sitemap URL must use production domain");
+  assert.equal(parsed.search, "", "Sitemap URL must not contain a query");
+  assert.equal(parsed.hash, "", "Sitemap URL must not contain a fragment");
+  assert.ok(
+    parsed.pathname === "/" || parsed.pathname.endsWith("/"),
+    `Sitemap URL must be the non-redirecting trailing-slash canonical: ${url}`,
+  );
+}
 
 const robots = await readFile(path.join(OUTPUT_DIR, "robots.txt"), "utf8");
 assert.match(robots, /Allow: \/$/mu);
 assert.doesNotMatch(robots, /Disallow: \/$/mu);
 assert.match(robots, /https:\/\/callmetodak2\.kr\/sitemap\.xml/u);
+
+const rssPath = path.join(OUTPUT_DIR, "rss.xml");
+await assertRegularFile(rssPath);
+const rss = await readFile(rssPath, "utf8");
+assert.ok(Buffer.byteLength(rss, "utf8") < 10 * 1024 * 1024, "RSS must remain below Naver's 10 MB limit");
+assert.match(rss, /^<\?xml version="1\.0" encoding="UTF-8"\?>/u);
+assert.match(rss, /<rss version="2\.0" xmlns:atom="http:\/\/www\.w3\.org\/2005\/Atom">/u);
+assert.match(rss, /<language>ko-KR<\/language>/u);
+assert.match(
+  rss,
+  /<atom:link href="https:\/\/callmetodak2\.kr\/rss\.xml" rel="self" type="application\/rss\+xml" \/>/u,
+);
+
+const rssItems = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/gu)].map((match) => match[1]);
+assert.equal(rssItems.length, blogSnapshot.posts.length, "RSS must include every dated editorial post");
+assert.equal(new Set(rssItems.map((item) => metadataValue(item, /<link>([^<]+)<\/link>/u, "RSS item link"))).size, rssItems.length, "RSS item links must be unique");
+const latestModifiedAt = new Date(
+  Math.max(...blogSnapshot.posts.map((post) => new Date(post.modifiedAt).valueOf())),
+).toUTCString();
+assert.match(rss, new RegExp(`<lastBuildDate>${latestModifiedAt.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}<\\/lastBuildDate>`, "u"));
+
+for (const post of blogSnapshot.posts) {
+  const canonical = `${SITE_URL}/blog/${post.slug}/`;
+  const item = rssItems.find((candidate) => candidate.includes(`<link>${canonical}</link>`));
+  assert.ok(item, `RSS must include canonical item ${canonical}`);
+  assert.match(item, new RegExp(`<guid isPermaLink="true">${canonical.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}<\\/guid>`, "u"));
+  assert.ok(item.includes(`<pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>`));
+  assert.ok(item.includes(escapeXml(post.intro)), `RSS must include the full intro for ${post.slug}`);
+  for (const section of post.sections) {
+    assert.ok(item.includes(escapeXml(section.heading)), `RSS must include ${section.heading}`);
+    for (const paragraph of section.paragraphs) {
+      assert.ok(item.includes(escapeXml(paragraph)), `RSS must include the full body for ${post.slug}`);
+    }
+  }
+}
 
 for (const route of expectedRoutes) {
   const pagePath = outputPathForRoute(route);
@@ -101,6 +154,12 @@ for (const route of expectedRoutes) {
   assert.doesNotMatch(html, /placeholder\.callme-todaki\.local|noindex|nofollow/u);
   assert.doesNotMatch(html, new RegExp(FORBIDDEN_MALE_TERM, "u"));
   assert.doesNotMatch(html, LEGACY_COURSES, `Legacy general-massage course leaked into ${route}`);
+  assert.equal(
+    (html.match(/type="application\/rss\+xml"/gu) ?? []).length,
+    1,
+    `Each HTML page must expose exactly one RSS autodiscovery link: ${route}`,
+  );
+  assert.match(html, /<link rel="alternate" type="application\/rss\+xml" title="콜미토닥이 블로그 RSS" href="\/rss\.xml"\/>/u);
   assertRouteMatches(
     metadataValue(html, /<link rel="canonical" href="([^"]+)"/u, `canonical metadata for ${route}`),
     route,
@@ -157,4 +216,4 @@ const exportedWebpFiles = (await listFiles(path.join(OUTPUT_DIR, "images", "call
 assert.equal(exportedWebpFiles.length, 57, "Netlify export must include 57 WebP files");
 for (const webpFile of webpFiles) await assertRegularFile(path.join(OUTPUT_DIR, webpFile));
 
-process.stdout.write(`Verified Netlify export: ${expectedRoutes.length} URLs, 19 active originals, 57 WebP assets.\n`);
+process.stdout.write(`Verified Netlify export: ${expectedRoutes.length} canonical URLs, ${rssItems.length} RSS items, 19 active originals, 57 WebP assets.\n`);

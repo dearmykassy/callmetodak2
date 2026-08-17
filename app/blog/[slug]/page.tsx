@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 
 import {
   BLOG_POSTS,
-  BLOG_SITE_URL,
   getBlogPost,
   getBlogPostRoute,
 } from "@/src/data/blog";
+import { canonicalUrl } from "@/src/data/site";
 
 import styles from "../blog.module.css";
 
@@ -55,20 +55,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   const route = getBlogPostRoute(post);
+  const canonical = canonicalUrl(route);
   const relatedRoute = `/blog/${post.relatedSlug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.h1,
     description: post.description,
-    url: `${BLOG_SITE_URL}${route}`,
-    mainEntityOfPage: `${BLOG_SITE_URL}${route}`,
+    url: canonical,
+    mainEntityOfPage: canonical,
+    datePublished: post.publishedAt,
+    dateModified: post.modifiedAt,
     inLanguage: "ko-KR",
     articleSection: "이용 안내",
     isPartOf: {
       "@type": "Blog",
       name: "콜미토닥이 블로그",
-      url: `${BLOG_SITE_URL}/blog`,
+      url: canonicalUrl("/blog"),
     },
     publisher: {
       "@type": "Organization",

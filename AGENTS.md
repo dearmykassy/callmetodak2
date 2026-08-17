@@ -20,3 +20,8 @@
 9. 검증은 빠르게 한다: 현재 전체 경로의 데이터/메타/본문 중복 코드 검사, build 1회,
    대표 root·city/gu 렌더만 확인한다. 전 경로 GUI 감사나 반복 build는 하지 않는다.
 10. 실제 도메인과 공개 승인이 확정되기 전에는 `noindex`를 유지한다.
+11. 이후 모든 플랫폼은 sitemap과 함께 `/rss.xml`을 출시한다. RSS 2.0 피드에는
+    실제 발행일이 확인된 최신 편집 콘텐츠만 본문 전체로 싣고, 같은 출처의 200 응답
+    canonical URL을 `link`와 영구 GUID로 사용한다. 빌드 시각으로 새 글처럼 보이게 하지
+    않으며, `ko-KR`, XML escaping, 1개 이상 item, 10MB 미만, 홈 RSS autodiscovery와
+    정적 export 계약을 테스트한다. 전체 지역 URL 목록은 RSS가 아니라 sitemap에 둔다.

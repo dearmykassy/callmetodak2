@@ -10,7 +10,8 @@
 - 지역별 핵심 검색어: 토닥이, 여성전용마사지, 여성전용출장마사지
 - 지역 이미지 18장, 원본당 최대 6개 경로 배정
 - 별도 홈 이미지 1장
-- sitemap 170개 URL
+- sitemap 170개 canonical URL
+- `/rss.xml`: 실제 발행일이 있는 블로그 글 2개의 본문 전체를 담은 RSS 2.0 피드
 
 ## 명령
 
@@ -18,8 +19,9 @@
 npm install
 npm run dev
 npm test
+npm run test:rss
 npm run lint
-npm run build
+npm run build:netlify
 ```
 
 ## GA4 환경 변수
@@ -40,8 +42,9 @@ npm run images:release:callme
 
 이 명령은 기존 104개 지역에 대해 봉인된 이미지 릴리스만 재현합니다. 새 세부 지역은 별도 이미지 릴리스가 만들어질 때까지 안전한 무이미지 배너 fallback을 사용하며, 기존 원본당 최대 6회 계약은 변경하지 않습니다.
 
-## 배포 전 확인
+## 검색 피드
 
-- 실제 도메인으로 canonical, OG URL, sitemap host를 교체
-- 배포 확인 후에만 `noindex`와 robots 전체 차단 해제
-- 네이버 서치어드바이저 등록은 도메인·배포가 확정된 뒤 진행
+- 운영 canonical, OG URL, sitemap, robots는 `https://callmetodak2.kr`을 사용합니다.
+- sitemap은 홈·고정·블로그·지역 HTML 170개를 모두 담고, RSS는 날짜가 확인된 최신 블로그 글만 본문 전체로 제공합니다.
+- RSS URL: `https://callmetodak2.kr/rss.xml`
+- 네이버 서치어드바이저에는 사이트 소유확인 뒤 sitemap과 RSS를 각각 제출합니다.
