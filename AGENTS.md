@@ -25,3 +25,6 @@
     canonical URL을 `link`와 영구 GUID로 사용한다. 빌드 시각으로 새 글처럼 보이게 하지
     않으며, `ko-KR`, XML escaping, 1개 이상 item, 10MB 미만, 홈 RSS autodiscovery와
     정적 export 계약을 테스트한다. 전체 지역 URL 목록은 RSS가 아니라 sitemap에 둔다.
+12. 이후 네이버 사이트 등록은 소유확인 뒤 sitemap과 RSS를 제출하고,
+    `설정 → 수집 주기 설정 → 빠르게`를 적용한다. CAPTCHA나 추가 인증이 나오면
+    우회하지 않고 사용자가 볼 수 있는 브라우저 화면을 유지한 채 직접 처리를 넘긴다.
