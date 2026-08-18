@@ -192,12 +192,27 @@ for (const route of expectedRoutes) {
   }
   if (regionalContent) {
     assert.equal(title, regionalContent.title, `Regional title must not receive the layout suffix twice: ${route}`);
+    assert.equal(
+      metadataValue(html, /<meta name="description" content="([^"]+)"/u, `regional description metadata for ${route}`),
+      regionalContent.description,
+      `Regional description must match the concise search snapshot: ${route}`,
+    );
     const regionalKeywords = metadataValue(
       html,
       /<meta name="keywords" content="([^"]+)"/u,
       `regional keywords metadata for ${route}`,
     ).split(",");
     assert.deepEqual(regionalKeywords, regionalContent.keywords, `Regional keyword order must match the snapshot: ${route}`);
+    assert.equal(
+      metadataValue(html, /<meta property="og:description" content="([^"]+)"/u, `Open Graph description for ${route}`),
+      regionalContent.description,
+      `Open Graph description must match the concise search snapshot: ${route}`,
+    );
+    assert.equal(
+      metadataValue(html, /<meta name="twitter:description" content="([^"]+)"/u, `Twitter description for ${route}`),
+      regionalContent.description,
+      `Twitter description must match the concise search snapshot: ${route}`,
+    );
   }
 
   for (const match of html.matchAll(/<meta name="twitter:image" content="([^"]+)"/gu)) {

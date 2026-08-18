@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import {
+  createKnownAdministrativeNameShortener,
+  shortenOfficialAdministrativeName,
+} from "../src/lib/search-region-label.mjs";
+
 const root = new URL("../", import.meta.url);
 const read = (path) => readFile(new URL(path, root), "utf8");
 const readJson = async (path) => JSON.parse(await read(path));
@@ -85,6 +90,38 @@ const REQUESTED_REGIONAL_ROUTES = {
 
 const EXPECTED_EXPANDED_REGION_COUNT = 162;
 const FORBIDDEN_MALE_TERM = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9);
+const SERVICE_KEYWORDS = ["토닥이", "여성전용마사지", "여성전용출장마사지", "출장안마", "출장마사지"];
+const OFFICIAL_ROOT_NAMES = [
+  "서울특별시",
+  "인천광역시",
+  "경기도",
+  "천안시",
+  "아산시",
+  "청주시",
+  "대전광역시",
+  "부산광역시",
+];
+
+test("known administrative suffixes shorten for search metadata without truncating lexical place names", () => {
+  assert.equal(shortenOfficialAdministrativeName("제주특별자치도"), "제주");
+  assert.equal(shortenOfficialAdministrativeName("세종특별자치시"), "세종");
+  assert.equal(shortenOfficialAdministrativeName("서울특별시"), "서울");
+  assert.equal(shortenOfficialAdministrativeName("인천광역시"), "인천");
+  assert.equal(shortenOfficialAdministrativeName("경기도"), "경기");
+  assert.equal(shortenOfficialAdministrativeName("수원시"), "수원");
+
+  const shortenKnown = createKnownAdministrativeNameShortener([
+    "서울특별시",
+    "인천광역시",
+    "경기도",
+    "수원시",
+  ]);
+  assert.equal(shortenKnown("서울특별시출장마사지"), "서울출장마사지");
+  assert.equal(shortenKnown("인천광역시 여성전용출장마사지"), "인천 여성전용출장마사지");
+  assert.equal(shortenKnown("경기도 수원시 출장마사지"), "경기 수원 출장마사지");
+  assert.equal(shortenKnown("인천광역시 인천공항 안내"), "인천공항 안내");
+  assert.equal(shortenKnown("송도 월미도 여의도"), "송도 월미도 여의도");
+});
 
 test("expanded locality graph has exactly 162 routes and a direct parent-card path for every owner request", async () => {
   const snapshot = await readJson("src/data/regions.generated.json");
@@ -155,6 +192,19 @@ test("expanded regional content keeps unique owner metadata and blocks male-only
   ]);
 
   const regionById = new Map(regions.map((region) => [region.id, region]));
+  const officialAdministrativeNames = [
+    ...OFFICIAL_ROOT_NAMES,
+    ...regions
+      .filter((region) => region.rootKey === "gyeonggi" && region.name.endsWith("시"))
+      .map((region) => region.name),
+  ];
+  const forbiddenFormalTarget = new RegExp(
+    `(?:${officialAdministrativeNames
+      .sort((left, right) => right.length - left.length)
+      .map((name) => name.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"))
+      .join("|")})\\s*(?=${SERVICE_KEYWORDS.join("|")})`,
+    "u",
+  );
   for (const document of documents) {
     const region = regionById.get(document.regionId);
     assert.ok(region, `missing region for ${document.route}`);
@@ -171,11 +221,61 @@ test("expanded regional content keeps unique owner metadata and blocks male-only
     assert.ok(document.title.includes(document.keywords[2]));
     assert.ok(document.h1.includes(region.label));
 
+    for (const [fieldName, values] of [
+      ["title", [document.title]],
+      ["description", [document.description]],
+      ["keywords", document.keywords],
+    ]) {
+      for (const value of values) {
+        assert.doesNotMatch(value, forbiddenFormalTarget, `${document.route} leaked a formal target in ${fieldName}`);
+        for (const officialName of officialAdministrativeNames) {
+          assert.ok(!value.includes(officialName), `${document.route} leaked ${officialName} in ${fieldName}`);
+        }
+      }
+    }
+
     const body = JSON.stringify(document);
     assert.ok(document.principles.some((principle) => principle.title === "현장 카드 결제 가능"));
     assert.ok(document.faqs.some((faq) => faq.answer === "현장 카드 결제 가능"));
     assert.doesNotMatch(body, new RegExp(FORBIDDEN_MALE_TERM, "u"));
     assert.doesNotMatch(body, /마사지봄|스타토닥이|마사지러브|후기|평점|도착|관리사|경력|배정|효능|방문|자택|홈케어|365일|연중무휴|일회용|소독/u);
+  }
+
+  const expectedExamples = new Map([
+    ["/areas/seoul", "서울"],
+    ["/areas/incheon", "인천"],
+    ["/areas/gyeonggi", "경기"],
+    ["/areas/gyeonggi/수원시", "수원"],
+  ]);
+  for (const [route, concise] of expectedExamples) {
+    const region = regions.find((candidate) => candidate.route === route);
+    const document = documents.find((candidate) => candidate.route === route);
+    assert.ok(region && document, `missing concise metadata example ${route}`);
+    assert.equal(region.keywordBase, concise);
+    assert.equal(document.keywords.at(-1), `${concise}출장마사지`);
+    assert.ok(document.title.includes(`${concise}여성전용출장마사지`));
+    assert.ok(document.description.startsWith(`${concise}여성전용마사지 안내입니다.`));
+  }
+
+  for (const [route, officialName] of [
+    ["/areas/busan/수영구/광안리", "부산광역시"],
+    ["/areas/incheon/영종구/인천공항", "인천광역시"],
+    ["/areas/seoul/광진구/건대", "서울특별시"],
+  ]) {
+    const document = documents.find((candidate) => candidate.route === route);
+    assert.ok(document, `missing metadata/body boundary example ${route}`);
+    assert.ok(!document.description.includes(officialName), `${route} metadata must use the concise region label`);
+    assert.ok(document.hero.lead.includes(officialName), `${route} visible copy must retain its official region label`);
+  }
+
+  const duplicateNames = Map.groupBy(regions, (region) => region.name);
+  for (const [name, matches] of duplicateNames) {
+    if (matches.length < 2) continue;
+    assert.equal(new Set(matches.map((region) => region.keywordBase)).size, matches.length, `${name} metadata needs a concise parent qualifier`);
+    for (const region of matches) {
+      const root = regions.find((candidate) => candidate.id === `root-${region.rootKey}`);
+      assert.ok(root && region.keywordBase.startsWith(root.keywordBase), `${region.route} must use its shortened parent label`);
+    }
   }
 });
 

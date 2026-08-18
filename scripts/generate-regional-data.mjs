@@ -7,10 +7,15 @@
  */
 import { execFileSync } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { createKnownAdministrativeNameShortener } from "../src/lib/search-region-label.mjs";
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const require = createRequire(import.meta.url);
+const TSX_IMPORT_PATH = require.resolve("tsx");
 const DATA_DIR = path.join(ROOT, "src", "data");
 const WORKSPACE_ROOT = path.resolve(ROOT, "..");
 const DEFAULT_MASSAGEBOM_ROOT = path.join(WORKSPACE_ROOT, "massagebom");
@@ -102,9 +107,16 @@ const SOURCE_ROOT_LABELS = {
   gyeonggi: "경기도",
   cheonan: "천안시",
   asan: "아산시",
+  cheongju: "청주시",
   daejeon: "대전광역시",
   busan: "부산광역시",
 };
+
+const OFFICIAL_SEARCH_REGION_NAMES = [
+  ...Object.values(SOURCE_ROOT_LABELS),
+  ...GYEONGGI_CITIES,
+];
+const shortenKnownRegionNames = createKnownAdministrativeNameShortener(OFFICIAL_SEARCH_REGION_NAMES);
 
 // Owner-requested search localities that sit below the original city/gu graph.
 // `sourceRoute` is an exact MassageBom semantic route unless `sourceKind` says
@@ -177,7 +189,7 @@ const FORBIDDEN_MALE_TERM = /\uB0A8\uC131\uC804\uC6A9/u;
 const REDUNDANT_SCOPE_SENTENCE = /^현재 안내 범위는 .+입니다\.$/u;
 
 const compact = (value) => value.normalize("NFC").replace(/\s+/gu, "");
-const cityStem = (value) => value.endsWith("시") ? value.slice(0, -1) : value;
+const cityStem = (value) => shortenKnownRegionNames(value);
 
 function stableHash(value) {
   let hash = 2166136261;
@@ -243,7 +255,7 @@ function materializeMassageBomBaseline() {
   const massageBomRoot = path.resolve(process.env.MASSAGEBOM_ROOT ?? DEFAULT_MASSAGEBOM_ROOT);
   const output = execFileSync(
     process.execPath,
-    ["--import", "tsx", MATERIALIZER_PATH, massageBomRoot],
+    ["--import", TSX_IMPORT_PATH, MATERIALIZER_PATH, massageBomRoot],
     {
       cwd: massageBomRoot,
       encoding: "utf8",
@@ -315,7 +327,7 @@ function buildRegions() {
       segments: [root.key],
       name: root.name,
       label: root.name,
-      keywordBase: root.name,
+      keywordBase: shortenKnownRegionNames(SOURCE_ROOT_LABELS[root.key] ?? root.name),
       sourceKind: root.sourceKind,
     });
   }
@@ -329,7 +341,7 @@ function buildRegions() {
         segments: [rootKey, district],
         name: district,
         label: `${rootInfo.name} ${district}`,
-        keywordBase: `${rootInfo.name}${district}`,
+        keywordBase: `${shortenKnownRegionNames(SOURCE_ROOT_LABELS[rootKey] ?? rootInfo.name)}${district}`,
         parentId: root.id,
         ancestors: [root.id],
         sourceKind: rootInfo.sourceKind,
@@ -375,7 +387,7 @@ function buildRegions() {
       segments,
       name: segments.at(-1),
       label,
-      keywordBase: label,
+      keywordBase: shortenKnownRegionNames(label),
       parentId: parent.id,
       ancestors,
       sourceKind,
@@ -498,7 +510,7 @@ function metadataFor(region, keywords, sourceLead) {
     // Mirrors MassageBom's canonical structure:
     // primary keyword + secondary keyword | service identity · platform brand.
     title: `${keywords[0]} ${keywords[1]} | ${keywords[2]} · ${BRAND}`,
-    description: `${keywords[1]} 안내입니다. ${sourceLead}`,
+    description: `${keywords[1]} 안내입니다. ${shortenKnownRegionNames(sourceLead)}`,
     h1: `${region.label} 여성전용출장마사지 안내`,
   };
 }
@@ -801,6 +813,12 @@ function assertSnapshot(regions, documents, massageBomSources) {
     const expected = keywordSet(region);
     if (JSON.stringify(document.keywords) !== JSON.stringify(expected)) {
       throw new Error(`KEYWORD_CONTRACT:${document.route}`);
+    }
+    for (const field of [document.title, document.description, ...document.keywords]) {
+      const leakedOfficialName = OFFICIAL_SEARCH_REGION_NAMES.find((name) => field.includes(name));
+      if (leakedOfficialName) {
+        throw new Error(`FORMAL_REGION_NAME_IN_SEARCH_METADATA:${document.route}:${leakedOfficialName}`);
+      }
     }
     assertDocumentSafety(document, region, massageBomSources.get(region.route));
   }
