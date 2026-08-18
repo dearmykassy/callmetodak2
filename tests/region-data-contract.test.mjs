@@ -265,7 +265,7 @@ test("expanded regional content keeps unique owner metadata and blocks male-only
     const document = documents.find((candidate) => candidate.route === route);
     assert.ok(document, `missing metadata/body boundary example ${route}`);
     assert.ok(!document.description.includes(officialName), `${route} metadata must use the concise region label`);
-    assert.ok(document.hero.lead.includes(officialName), `${route} visible copy must retain its official region label`);
+    assert.ok(document.hero.lead.includes(officialName), `${route} non-metadata copy must retain its official region label`);
   }
 
   const duplicateNames = Map.groupBy(regions, (region) => region.name);

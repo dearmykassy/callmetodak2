@@ -28,8 +28,8 @@
 - `구·군·읍·면·동·리`는 일괄 제거하지 않으며, `송도·월미도·여의도`처럼 글자 자체가
   `도`로 끝나는 고유 지명도 훼손하지 않는다. 동명 지역은 축약한 상위 지역명을 붙인
   기존 고유 keywordBase를 유지한다.
-- 메타 description에 원문 정식 광역명이 남던 7개 경로도 축약하되 같은 원문을 쓰는
-  화면 hero/body는 그대로 보존했다. URL·canonical·H1·breadcrumb·schema는 변경하지 않았다.
+- 메타 description에 원문 정식 광역명이 남던 7개 경로도 축약하되 metadata가 아닌
+  hero/body 콘텐츠 스냅샷은 그대로 보존했다. URL·canonical·H1·breadcrumb·schema는 변경하지 않았다.
 - 162개 전 경로의 title·keywords·description을 대상으로 예시, 고유성, 정식 행정명 누출,
   서비스 검색어 직전 정식 접미사, 동명 지역 구분을 검사하는 회귀 계약을 추가했다.
 
