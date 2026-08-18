@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/src/components/SiteLink";
 
 import { BLOG_POSTS, getBlogPostRoute } from "@/src/data/blog";
 

@@ -52,13 +52,42 @@ test("production robots allow crawling while sitemap enumerates every public rou
   assert.equal(posts.length, 2);
   assert.equal(6 + posts.length + regions.length, 170, "the public sitemap must contain the expanded 170-URL graph");
   assert.match(sitemap, /const fixedRoutes = \["\/", "\/areas", "\/pricing", "\/guide", "\/notice", "\/blog"\]/u);
-  assert.match(sitemap, /BLOG_POSTS\.map\(getBlogPostRoute\)/u);
-  assert.match(sitemap, /REGIONS\.map\(\(region\) => region\.route\)/u);
+  assert.match(sitemap, /BLOG_POSTS\.map\(\(post\) =>/u);
+  assert.match(sitemap, /REGIONS\.map\(\(region\) =>/u);
   assert.match(site, /https:\/\/callmetodak2\.kr/u);
   assert.match(sitemap, /import \{ canonicalUrl \} from "@\/src\/data\/site"/u);
-  assert.match(sitemap, /url: canonicalUrl\(route\)/u);
+  assert.match(sitemap, /lastModified: new Date\(FIXED_ROUTE_LAST_MODIFIED\[route\]\)/u);
+  assert.match(sitemap, /lastModified: new Date\(post\.modifiedAt\)/u);
+  assert.match(sitemap, /lastModified: new Date\(REGIONAL_LAST_MODIFIED\)/u);
+  assert.doesNotMatch(sitemap, /Date\.now|new Date\(\)/u);
+  assert.doesNotMatch(sitemap, /changeFrequency|priority/u);
   assert.match(robots, /userAgent: "\*"/u);
   assert.match(robots, /allow: "\/"/u);
   assert.doesNotMatch(robots, /disallow: "\/"/u);
   assert.match(robots, /sitemap: `\$\{SITE_URL\}\/sitemap\.xml`/u);
+});
+
+test("sitemap modification dates are stable, parseable, non-future release facts", async () => {
+  const [sitemap, blogSnapshot] = await Promise.all([
+    read("app/sitemap.ts"),
+    read("src/data/blog.generated.json"),
+  ]);
+  const fixedBlock = sitemap.match(/export const FIXED_ROUTE_LAST_MODIFIED = \{([\s\S]*?)\} as const;/u)?.[1];
+  assert.ok(fixedBlock);
+  const fixedDates = [...fixedBlock.matchAll(/"\/(?:[^"]*)?": "([^"]+)"/gu)].map((match) => match[1]);
+  assert.equal(fixedDates.length, 6);
+
+  const regionalDate = sitemap.match(/export const REGIONAL_LAST_MODIFIED = "([^"]+)"/u)?.[1];
+  assert.ok(regionalDate);
+  const blogDates = JSON.parse(blogSnapshot).posts.map((post) => post.modifiedAt);
+  const allDates = [...fixedDates, regionalDate, ...blogDates];
+  for (const value of allDates) {
+    const timestamp = new Date(value);
+    assert.ok(Number.isFinite(timestamp.valueOf()), `invalid lastmod: ${value}`);
+    assert.ok(timestamp.valueOf() <= Date.now(), `future lastmod: ${value}`);
+  }
+  assert.deepEqual(blogDates, [
+    "2026-08-15T13:11:46+09:00",
+    "2026-08-15T13:11:46+09:00",
+  ]);
 });

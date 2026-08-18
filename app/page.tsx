@@ -3,7 +3,15 @@ import {
   getImageHeaderStyle,
 } from "@/src/data/image-release";
 import { formatPrice, OPERATING_FACTS } from "@/src/data/callme-regions";
-import Link from "next/link";
+import Link from "@/src/components/SiteLink";
+import type { Metadata } from "next";
+
+// Home-only metadata must live on the home route rather than the root layout.
+// Otherwise Next's generated 404 inherits the homepage canonical/index policy.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+};
 
 const homeHeroImage = getHomeHeroImage();
 const PHONE = "0508-202-3906";

@@ -7,6 +7,15 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT_DIR = path.join(ROOT, "out");
 const SITE_URL = "https://callmetodak2.kr";
 const fixedRoutes = ["/", "/areas", "/pricing", "/guide", "/notice", "/blog"];
+const fixedRouteLastModified = new Map([
+  ["/", "2026-08-15T23:15:14+09:00"],
+  ["/areas", "2026-08-15T23:15:14+09:00"],
+  ["/pricing", "2026-08-15T21:59:21+09:00"],
+  ["/guide", "2026-08-15T13:11:46+09:00"],
+  ["/notice", "2026-08-15T13:11:46+09:00"],
+  ["/blog", "2026-08-15T13:11:46+09:00"],
+]);
+const REGIONAL_LAST_MODIFIED = "2026-08-19T00:27:35+09:00";
 const HOME_METADATA_TITLE = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
 const HOME_METADATA_KEYWORDS = [
   "토닥이",
@@ -52,6 +61,18 @@ function metadataValue(html, expression, label) {
   return value;
 }
 
+function headMarkup(html) {
+  return html.match(/<head(?:\s[^>]*)?>([\s\S]*?)<\/head>/iu)?.[1] ?? "";
+}
+
+function attributes(tag) {
+  const result = new Map();
+  for (const match of tag.matchAll(/([^\s=/>]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/gu)) {
+    result.set(match[1].toLowerCase(), match[2] ?? match[3] ?? match[4] ?? "");
+  }
+  return result;
+}
+
 function escapeXml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -82,13 +103,23 @@ const regionalContentByRoute = new Map(
   regionalContentSnapshot.documents.map((document) => [document.route, document]),
 );
 const expectedRoutes = [...fixedRoutes, ...blogRoutes, ...regionalRoutes];
+const expectedLastModifiedByRoute = new Map([
+  ...fixedRouteLastModified,
+  ...blogSnapshot.posts.map((post) => [`/blog/${post.slug}`, post.modifiedAt]),
+  ...regionalRoutes.map((route) => [route, REGIONAL_LAST_MODIFIED]),
+]);
 
 assert.equal(new Set(expectedRoutes).size, expectedRoutes.length, "The release URL graph must be unique");
+assert.equal(expectedLastModifiedByRoute.size, expectedRoutes.length, "Every public URL needs one lastmod source");
 
 const sitemap = await readFile(path.join(OUTPUT_DIR, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gu)].map((match) => match[1]);
+const sitemapEntries = [...sitemap.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/gu)]
+  .map((match) => ({ url: match[1], lastModified: match[2] }));
 assert.equal(sitemapUrls.length, expectedRoutes.length, "The sitemap must contain every public URL");
 assert.equal(new Set(sitemapUrls).size, expectedRoutes.length, "The sitemap must not duplicate URLs");
+assert.equal(sitemapEntries.length, expectedRoutes.length, "Every sitemap URL must have exactly one lastmod");
+assert.doesNotMatch(sitemap, /<(?:changefreq|priority)>/u, "Sitemap must omit ignored priority/changefreq hints");
 assert.deepEqual(
   new Set(sitemapUrls.map((url) => normalizeRoute(new URL(url).pathname))),
   new Set(expectedRoutes.map(normalizeRoute)),
@@ -104,6 +135,31 @@ for (const url of sitemapUrls) {
     `Sitemap URL must be the non-redirecting trailing-slash canonical: ${url}`,
   );
 }
+for (const entry of sitemapEntries) {
+  const route = normalizeRoute(new URL(entry.url).pathname);
+  const expected = expectedLastModifiedByRoute.get(route);
+  assert.ok(expected, `Missing lastmod provenance for ${route}`);
+  const parsed = new Date(entry.lastModified);
+  assert.ok(Number.isFinite(parsed.valueOf()), `Invalid sitemap lastmod for ${route}`);
+  assert.ok(parsed.valueOf() <= Date.now(), `Future sitemap lastmod for ${route}`);
+  assert.equal(parsed.toISOString(), new Date(expected).toISOString(), `Sitemap lastmod drift for ${route}`);
+}
+
+const notFoundHtml = await readFile(path.join(OUTPUT_DIR, "404.html"), "utf8");
+const notFoundHead = headMarkup(notFoundHtml);
+const notFoundCanonicalLinks = [...notFoundHead.matchAll(/<link\b[^>]*>/giu)].filter((match) =>
+  attributes(match[0]).get("rel") === "canonical"
+);
+const notFoundRobots = [...notFoundHead.matchAll(/<meta\b[^>]*>/giu)].flatMap((match) => {
+  const attrs = attributes(match[0]);
+  return attrs.get("name") === "robots" ? [attrs.get("content") ?? ""] : [];
+});
+assert.equal(notFoundCanonicalLinks.length, 0, "404 HTML must not inherit the homepage canonical");
+assert.ok(notFoundRobots.some((value) => value.includes("noindex")), "404 HTML must remain noindex");
+assert.ok(
+  notFoundRobots.every((value) => !/^index(?:,|$)/u.test(value)),
+  "404 HTML must not inherit an index directive",
+);
 
 const robots = await readFile(path.join(OUTPUT_DIR, "robots.txt"), "utf8");
 assert.match(robots, /Allow: \/$/mu);
@@ -231,4 +287,4 @@ const exportedWebpFiles = (await listFiles(path.join(OUTPUT_DIR, "images", "call
 assert.equal(exportedWebpFiles.length, 57, "Netlify export must include 57 WebP files");
 for (const webpFile of webpFiles) await assertRegularFile(path.join(OUTPUT_DIR, webpFile));
 
-process.stdout.write(`Verified Netlify export: ${expectedRoutes.length} canonical URLs, ${rssItems.length} RSS items, 19 active originals, 57 WebP assets.\n`);
+process.stdout.write(`Verified Netlify export: ${expectedRoutes.length} canonical URLs with stable lastmod, ${rssItems.length} RSS items, 19 active originals, 57 WebP assets, isolated 404 metadata.\n`);

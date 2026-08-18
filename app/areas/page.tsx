@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/src/components/SiteLink";
 
 import styles from "../fixed-page.module.css";
 

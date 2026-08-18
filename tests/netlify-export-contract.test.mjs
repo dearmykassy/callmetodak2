@@ -24,4 +24,6 @@ test("Netlify build uses the pinned Next static-export lane", async () => {
   assert.match(verifier, /const TODAKI_PRICES = \["120,000원", "150,000원", "180,000원"\]/u);
   assert.match(verifier, /Legacy general-massage course leaked/u);
   assert.match(verifier, /Regional description must match the concise search snapshot/u);
+  assert.match(verifier, /Every sitemap URL must have exactly one lastmod/u);
+  assert.match(verifier, /404 HTML must not inherit the homepage canonical/u);
 });

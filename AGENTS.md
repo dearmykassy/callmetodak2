@@ -35,3 +35,12 @@
     없으면 자르지 않고, 동명 지역은 동일하게 축약한 상위 지역명을 붙여 구분한다. 이 규칙은
     검색 메타에만 적용하며 URL·canonical과 화면 H1·본문·breadcrumb·schema의 정식 지역명은
     바꾸지 않는다. 모든 지역 경로의 세 메타 필드와 고유성 회귀 테스트를 함께 유지한다.
+14. sitemap `<lastmod>`는 페이지가 실제로 의미 있게 바뀐 commit/영수증 시각을
+    route group별 고정 상수로 관리한다. 블로그 글은 각 글의 `modifiedAt`을 그대로 쓰고,
+    빌드 시각·`Date.now()`로 전체 URL을 갱신하지 않는다. Google이 무시하는 sitemap
+    `priority`·`changefreq`는 내보내지 않는다. 홈 canonical/index metadata는 홈 route에
+    두어 404 HTML이 홈 canonical 또는 index 지시를 상속하지 않게 유지한다.
+15. 내부 Next 링크는 `src/components/SiteLink.tsx`만 사용한다. 이 중앙 래퍼는
+    운영 빌드에서 `prefetch={false}`를 강제해 자동 `_rsc` prefetch 요청이 검색봇의
+    crawl budget을 소비하지 않게 한다. 래퍼 외 `next/link` 직접 import를 금지하고
+    전체 app/src import 회귀 테스트를 유지한다.

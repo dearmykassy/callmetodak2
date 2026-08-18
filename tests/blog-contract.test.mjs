@@ -55,5 +55,6 @@ test("blog routes use production-indexable metadata, JSON-LD, and required inter
   assert.equal((postPage.match(/images: \[\]/gu) ?? []).length, 2);
   assert.match(layout, /href: "\/blog", label: "블로그"/u);
   assert.match(home, /href="\/blog">블로그/u);
-  assert.match(sitemap, /BLOG_POSTS\.map\(getBlogPostRoute\)/u);
+  assert.match(sitemap, /BLOG_POSTS\.map\(\(post\) =>/u);
+  assert.match(sitemap, /lastModified: new Date\(post\.modifiedAt\)/u);
 });

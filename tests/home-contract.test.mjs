@@ -25,7 +25,10 @@ test("Callme Todaki home carries the approved operating slice", async () => {
   assert.ok(keywordBlock);
   const homeKeywords = [...keywordBlock.matchAll(/"([^"]+)"/gu)].map((match) => match[1]);
   assert.deepEqual(homeKeywords.slice(0, coreKeywords.length), coreKeywords);
-  assert.match(layout, /robots: \{ index: true, follow: true \}/);
+  assert.doesNotMatch(layout, /robots: \{ index: true, follow: true \}/);
+  assert.doesNotMatch(layout, /alternates: \{ canonical: "\/" \}/);
+  assert.match(page, /robots: \{ index: true, follow: true \}/);
+  assert.match(page, /alternates: \{ canonical: "\/" \}/);
   assert.match(page, /수도권·충청권/);
   assert.match(page, /0508-202-3906/);
   assert.match(page, /24시간 전화상담/);

@@ -20,6 +20,24 @@
 
 ## 활동 기록 — 최신순
 
+### 2026-08-19 — 안정적인 sitemap lastmod와 404 metadata 분리
+
+- 170개 sitemap URL에 빌드 시각이 아닌 확인된 콘텐츠 revision 시각을 넣었다.
+  홈·지역 목록은 `f3082c43`, 가격은 `927cdf3b`, 나머지 고정 페이지와 블로그 허브는
+  운영 launch `eadecf87`, 지역 페이지는 검색 메타 revision `9a724ac9`의 commit 시각을
+  route-group 상수로 고정했다. 블로그 2건은 각 `modifiedAt`을 그대로 사용한다.
+- Google sitemap에서 의미가 없는 `priority`·`changefreq`는 출력하지 않는다.
+- 홈 canonical/index metadata를 root layout에서 홈 route로 옮겨 정상 170개 페이지의
+  metadata는 유지하면서 생성 404가 홈 canonical과 index 지시를 상속하지 않게 했다.
+- 모든 내부 `next/link` 사용을 중앙 `SiteLink`로 모으고 운영 환경에서는
+  `prefetch=false`를 강제했다. wrapper 외 직접 import가 생기면 실패하는 계약을 추가해
+  자동 `_rsc` 요청이 다시 늘어나는 회귀를 막는다.
+- sitemap URL 수·고유성·날짜 parse/nonfuture/stability·블로그 날짜 일치·금지 필드 0건,
+  정상 canonical 불변과 404 status/noindex/canonical 부재를 source/built 계약으로 검증했다.
+  전체 test 25/25, TypeScript, lint 오류 0(기존 img warning 4), Netlify 정적 build
+  175페이지와 built audit 170 canonical URL이 통과했다. 임의 slash 경로는 실제 HTTP
+  404·robots `noindex`·canonical 0건, 정상 홈/지역은 200·self-canonical을 확인했다.
+
 ### 2026-08-19 — 고객 검색형 지역 메타 영구 규칙
 
 - 오너 피드백에 따라 지역 title·keywords·description의 핵심 표기를 정식 행정명보다
