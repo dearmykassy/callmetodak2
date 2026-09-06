@@ -22,7 +22,7 @@ test("Callme blog keeps two distinct, substantive, independently written guides"
 
   for (const post of posts) {
     assert.equal(post.publishedAt, "2026-08-15T13:11:46+09:00");
-    assert.equal(post.modifiedAt, "2026-09-07T05:09:49+09:00");
+    assert.equal(post.modifiedAt, "2026-09-07T05:50:46+09:00");
     const articleText = [post.intro, ...post.sections.flatMap((section) => section.paragraphs)].join("");
     assert.ok(articleText.length >= 900 && articleText.length <= 1400, `${post.slug} body must be 900–1400 characters`);
     assert.match(articleText, /24시간 전화상담/u);

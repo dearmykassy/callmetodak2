@@ -29,15 +29,15 @@ test("analytics paths are query-free and page types are stable", () => {
 
 test("CTA context removes phone numbers and prefers explicit locations", () => {
   assert.equal(
-    analytics.resolveCtaLocation(undefined, "0508-2011-1231 전화상담", undefined),
+    analytics.resolveCtaLocation(undefined, "0508-201-1232 전화상담", undefined),
     "전화상담",
   );
-  assert.equal(analytics.resolveCtaLocation(undefined, "0508-2011-1231", undefined), "phone_cta");
-  assert.equal(analytics.resolveCtaLocation("footer", "0508-2011-1231", undefined), "footer");
+  assert.equal(analytics.resolveCtaLocation(undefined, "0508-201-1232", undefined), "phone_cta");
+  assert.equal(analytics.resolveCtaLocation("footer", "0508-201-1232", undefined), "footer");
 });
 
 test("page titles are redacted and length limited", () => {
-  const title = `예약 문의 0508-2011-1231 user@example.com ${"가".repeat(120)}`;
+  const title = `예약 문의 0508-201-1232 user@example.com ${"가".repeat(120)}`;
   const sanitized = analytics.sanitizePageTitle(title);
   assert.equal(sanitized.includes("0508"), false);
   assert.equal(sanitized.includes("@"), false);

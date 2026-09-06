@@ -30,7 +30,7 @@ test("RSS publishes complete editorial posts with stable production canonicals",
 
   for (const post of posts) {
     assert.equal(post.publishedAt, "2026-08-15T13:11:46+09:00");
-    assert.equal(post.modifiedAt, "2026-09-07T05:09:49+09:00");
+    assert.equal(post.modifiedAt, "2026-09-07T05:50:46+09:00");
     assert.ok(post.intro.length > 100);
     assert.equal(post.sections.length, 4);
   }

@@ -12,17 +12,17 @@ const fixedRoutes = ["/", "/areas", "/pricing", "/guide", "/notice", "/blog"] as
 // They are intentionally not derived from build time: a deploy without a
 // content change must not make every sitemap entry look newly modified.
 export const FIXED_ROUTE_LAST_MODIFIED = {
-  "/": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
-  "/areas": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
-  "/pricing": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
-  "/guide": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
-  "/notice": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
-  "/blog": "2026-09-07T05:09:49+09:00", // owner phone-profile migration
+  "/": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
+  "/areas": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
+  "/pricing": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
+  "/guide": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
+  "/notice": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
+  "/blog": "2026-09-07T05:50:46+09:00", // owner phone-profile correction
 } as const;
 
 // 9a724ac9 is the latest meaningful revision shared by every regional page:
 // customer-search-form metadata was shortened on 2026-08-19.
-export const REGIONAL_LAST_MODIFIED = "2026-09-07T05:09:49+09:00";
+export const REGIONAL_LAST_MODIFIED = "2026-09-07T05:50:46+09:00";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fixed = fixedRoutes.map((route) => ({

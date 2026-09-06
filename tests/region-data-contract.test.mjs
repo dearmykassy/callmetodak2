@@ -191,9 +191,9 @@ test("expanded regional content keeps unique owner metadata and blocks male-only
     { name: "센슈얼 감성 테라피", items: [[60, 120000], [90, 150000], [120, 180000]] },
   ]);
   assert.deepEqual(operatingFacts.phone, {
-    display: "0508-2011-1231",
-    href: "tel:050820111231",
-    schema: "+82-508-2011-1231",
+    display: "0508-201-1232",
+    href: "tel:05082011232",
+    schema: "+82-508-201-1232",
   });
 
   const regionById = new Map(regions.map((region) => [region.id, region]));

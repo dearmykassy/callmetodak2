@@ -8,14 +8,14 @@ const OUTPUT_DIR = path.join(ROOT, "out");
 const SITE_URL = "https://callmetodak2.kr";
 const fixedRoutes = ["/", "/areas", "/pricing", "/guide", "/notice", "/blog"];
 const fixedRouteLastModified = new Map([
-  ["/", "2026-09-07T05:09:49+09:00"],
-  ["/areas", "2026-09-07T05:09:49+09:00"],
-  ["/pricing", "2026-09-07T05:09:49+09:00"],
-  ["/guide", "2026-09-07T05:09:49+09:00"],
-  ["/notice", "2026-09-07T05:09:49+09:00"],
-  ["/blog", "2026-09-07T05:09:49+09:00"],
+  ["/", "2026-09-07T05:50:46+09:00"],
+  ["/areas", "2026-09-07T05:50:46+09:00"],
+  ["/pricing", "2026-09-07T05:50:46+09:00"],
+  ["/guide", "2026-09-07T05:50:46+09:00"],
+  ["/notice", "2026-09-07T05:50:46+09:00"],
+  ["/blog", "2026-09-07T05:50:46+09:00"],
 ]);
-const REGIONAL_LAST_MODIFIED = "2026-09-07T05:09:49+09:00";
+const REGIONAL_LAST_MODIFIED = "2026-09-07T05:50:46+09:00";
 const HOME_METADATA_TITLE = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
 const HOME_METADATA_KEYWORDS = [
   "토닥이",

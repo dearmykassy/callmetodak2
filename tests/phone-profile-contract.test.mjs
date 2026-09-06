@@ -19,11 +19,11 @@ test("one owner-approved Todaki phone profile governs every active source", asyn
   const profile = JSON.parse(await readFile(path.join(root, "src/data/phone-profile.json"), "utf8"));
   assert.deepEqual(profile, {
     schemaVersion: "callme-todaki-phone-profile/v1",
-    profileId: "todaki-0508-2011-1231-v1",
-    digits: "050820111231",
-    display: "0508-2011-1231",
-    href: "tel:050820111231",
-    schema: "+82-508-2011-1231",
+    profileId: "todaki-0508-201-1232-v1",
+    digits: "05082011232",
+    display: "0508-201-1232",
+    href: "tel:05082011232",
+    schema: "+82-508-201-1232",
   });
 
   const allowed = new Set([profile.digits, profile.display, profile.href, profile.schema]);
