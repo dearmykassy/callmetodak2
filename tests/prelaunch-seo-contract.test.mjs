@@ -87,7 +87,7 @@ test("sitemap modification dates are stable, parseable, non-future release facts
     assert.ok(timestamp.valueOf() <= Date.now(), `future lastmod: ${value}`);
   }
   assert.deepEqual(blogDates, [
-    "2026-08-15T13:11:46+09:00",
-    "2026-08-15T13:11:46+09:00",
+    "2026-09-07T05:09:49+09:00",
+    "2026-09-07T05:09:49+09:00",
   ]);
 });

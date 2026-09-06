@@ -3,6 +3,7 @@ import {
   getImageHeaderStyle,
 } from "@/src/data/image-release";
 import { formatPrice, OPERATING_FACTS } from "@/src/data/callme-regions";
+import { TODAKI_PHONE } from "@/src/data/phone";
 import Link from "@/src/components/SiteLink";
 import type { Metadata } from "next";
 
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 const homeHeroImage = getHomeHeroImage();
-const PHONE = "0508-202-3906";
-const TEL = "tel:05082023906";
+const PHONE = TODAKI_PHONE.display;
+const TEL = TODAKI_PHONE.href;
 const serviceAreas = [
   ["서울", "/areas/seoul"],
   ["인천", "/areas/incheon"],

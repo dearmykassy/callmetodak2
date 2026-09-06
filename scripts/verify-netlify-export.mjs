@@ -8,14 +8,14 @@ const OUTPUT_DIR = path.join(ROOT, "out");
 const SITE_URL = "https://callmetodak2.kr";
 const fixedRoutes = ["/", "/areas", "/pricing", "/guide", "/notice", "/blog"];
 const fixedRouteLastModified = new Map([
-  ["/", "2026-08-15T23:15:14+09:00"],
-  ["/areas", "2026-08-15T23:15:14+09:00"],
-  ["/pricing", "2026-08-15T21:59:21+09:00"],
-  ["/guide", "2026-08-15T13:11:46+09:00"],
-  ["/notice", "2026-08-15T13:11:46+09:00"],
-  ["/blog", "2026-08-15T13:11:46+09:00"],
+  ["/", "2026-09-07T05:09:49+09:00"],
+  ["/areas", "2026-09-07T05:09:49+09:00"],
+  ["/pricing", "2026-09-07T05:09:49+09:00"],
+  ["/guide", "2026-09-07T05:09:49+09:00"],
+  ["/notice", "2026-09-07T05:09:49+09:00"],
+  ["/blog", "2026-09-07T05:09:49+09:00"],
 ]);
-const REGIONAL_LAST_MODIFIED = "2026-08-19T00:27:35+09:00";
+const REGIONAL_LAST_MODIFIED = "2026-09-07T05:09:49+09:00";
 const HOME_METADATA_TITLE = "토닥이 | 여성전용마사지 | 여성전용출장마사지 | 콜미토닥이";
 const HOME_METADATA_KEYWORDS = [
   "토닥이",
@@ -29,6 +29,7 @@ const FORBIDDEN_MALE_TERM = String.fromCodePoint(0xb0a8, 0xc131, 0xc804, 0xc6a9)
 const TODAKI_COURSE = "센슈얼 감성 테라피";
 const TODAKI_PRICES = ["120,000원", "150,000원", "180,000원"];
 const LEGACY_COURSES = /타이|아로마|힐링|스페셜/u;
+const PHONE_TOKEN_PATTERN = /(?:tel:0508\d{7,8}|\+82-508-\d{3,4}-\d{4}|0508-\d{3,4}-\d{4}|(?<![\d:])0508\d{7,8}(?!\d))/gu;
 
 const normalizeRoute = (route) => {
   const decodedRoute = decodeURIComponent(route);
@@ -91,11 +92,23 @@ async function listFiles(directory) {
   return descendants.flat();
 }
 
-const [regionsSnapshot, blogSnapshot, imageRelease, regionalContentSnapshot] = await Promise.all([
+const [regionsSnapshot, blogSnapshot, imageRelease, regionalContentSnapshot, phoneProfile] = await Promise.all([
   readJson("src/data/regions.generated.json"),
   readJson("src/data/blog.generated.json"),
   readJson("src/data/image-release.generated.json"),
   readJson("src/data/region-content.generated.json"),
+  readJson("src/data/phone-profile.json"),
+]);
+assert.deepEqual(regionsSnapshot.operatingFacts.phone, {
+  display: phoneProfile.display,
+  href: phoneProfile.href,
+  schema: phoneProfile.schema,
+}, "Regional operating facts must match the owner-approved phone profile");
+const allowedPhoneTokens = new Set([
+  phoneProfile.digits,
+  phoneProfile.display,
+  phoneProfile.href,
+  phoneProfile.schema,
 ]);
 const blogRoutes = blogSnapshot.posts.map((post) => `/blog/${post.slug}`);
 const regionalRoutes = regionsSnapshot.regions.map((region) => region.route);
@@ -210,6 +223,14 @@ for (const route of expectedRoutes) {
   assert.doesNotMatch(html, /placeholder\.callme-todaki\.local|noindex|nofollow/u);
   assert.doesNotMatch(html, new RegExp(FORBIDDEN_MALE_TERM, "u"));
   assert.doesNotMatch(html, LEGACY_COURSES, `Legacy general-massage course leaked into ${route}`);
+  const phoneTokens = html.match(PHONE_TOKEN_PATTERN) ?? [];
+  assert.ok(phoneTokens.length > 0, `Every public route must expose the approved phone profile: ${route}`);
+  for (const token of phoneTokens) {
+    assert.ok(allowedPhoneTokens.has(token), `Unapproved phone token on ${route}: ${token}`);
+  }
+  for (const match of html.matchAll(/<a\b[^>]*href="(tel:[^"]+)"[^>]*>/gu)) {
+    assert.equal(match[1], phoneProfile.href, `Every telephone link must use the approved href: ${route}`);
+  }
   assert.equal(
     (html.match(/type="application\/rss\+xml"/gu) ?? []).length,
     1,

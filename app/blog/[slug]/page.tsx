@@ -8,6 +8,7 @@ import {
   getBlogPostRoute,
 } from "@/src/data/blog";
 import { canonicalUrl } from "@/src/data/site";
+import { TODAKI_PHONE } from "@/src/data/phone";
 
 import styles from "../blog.module.css";
 
@@ -76,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     publisher: {
       "@type": "Organization",
       name: "콜미토닥이",
-      telephone: "0508-202-3906",
+      telephone: TODAKI_PHONE.schema,
     },
   };
 
@@ -98,7 +99,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ))}
           <nav className={styles.articleLinks} aria-label="글 관련 링크">
             <Link href="/areas">서비스 지역 안내</Link>
-            <a className={styles.call} href="tel:05082023906">24시간 전화상담<br />0508-202-3906</a>
+            <a className={styles.call} href={TODAKI_PHONE.href}>24시간 전화상담<br />{TODAKI_PHONE.display}</a>
             <Link href={relatedRoute}>관련 글<br />{post.relatedLabel}</Link>
           </nav>
           <Link className={styles.backLink} href="/blog">← 블로그 목록으로</Link>

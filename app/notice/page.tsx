@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TODAKI_PHONE } from "@/src/data/phone";
 import styles from "../fixed-page.module.css";
 import noticeStyles from "./notice.module.css";
 
@@ -7,7 +8,7 @@ const notices = [
     code: "01",
     category: "CONSULTATION",
     title: "24시간 전화상담",
-    copy: "지역, 희망 시간, 코스를 0508-202-3906으로 알려주시면 상담에서 확인할 내용을 안내합니다.",
+    copy: `지역, 희망 시간, 코스를 ${TODAKI_PHONE.display}로 알려주시면 상담에서 확인할 내용을 안내합니다.`,
   },
   {
     code: "02",
@@ -62,7 +63,7 @@ export default function NoticePage() {
           </section>
           <section className={noticeStyles.noticeContact} aria-label="전화상담 안내">
             <p>개별 이용 내용은 전화상담에서 확인해 주세요.</p>
-            <a className={styles.cta} href="tel:05082023906">전화상담 0508-202-3906</a>
+            <a className={styles.cta} href={TODAKI_PHONE.href}>전화상담 {TODAKI_PHONE.display}</a>
           </section>
         </div>
       </div>

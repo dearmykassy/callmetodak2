@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/src/components/SiteLink";
 
 import { BLOG_POSTS, getBlogPostRoute } from "@/src/data/blog";
+import { TODAKI_PHONE } from "@/src/data/phone";
 
 import styles from "./blog.module.css";
 
@@ -54,7 +55,7 @@ export default function BlogPage() {
         <section className={styles.section}>
           <div className={styles.notice}>
             <strong>확인된 운영 기준만 안내합니다</strong>
-            <p>24시간 전화상담 · 선입금 없는 100% 현장 후불 · 현장 카드 결제 가능. 지역과 희망 시간, 코스는 0508-202-3906으로 확인해 주세요.</p>
+            <p>24시간 전화상담 · 선입금 없는 100% 현장 후불 · 현장 카드 결제 가능. 지역과 희망 시간, 코스는 {TODAKI_PHONE.display}로 확인해 주세요.</p>
           </div>
         </section>
       </div>

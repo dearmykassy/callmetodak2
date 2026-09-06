@@ -17,6 +17,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require = createRequire(import.meta.url);
 const TSX_IMPORT_PATH = require.resolve("tsx");
 const DATA_DIR = path.join(ROOT, "src", "data");
+const PHONE_PROFILE = require(path.join(DATA_DIR, "phone-profile.json"));
 const WORKSPACE_ROOT = path.resolve(ROOT, "..");
 const DEFAULT_MASSAGEBOM_ROOT = path.join(WORKSPACE_ROOT, "massagebom");
 const MATERIALIZER_PATH = path.join(
@@ -37,8 +38,9 @@ const KEYWORD_SUFFIXES = [
 ];
 
 const PHONE = {
-  display: "0508-202-3906",
-  href: "tel:05082023906",
+  display: PHONE_PROFILE.display,
+  href: PHONE_PROFILE.href,
+  schema: PHONE_PROFILE.schema,
 };
 
 const OPERATING_FACTS = {

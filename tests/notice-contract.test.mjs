@@ -39,7 +39,7 @@ test("notice board contains only confirmed operating notices without made-up dat
   assert.match(noticePage, /24시간 전화상담/u);
   assert.match(noticePage, /선입금 없는 100% 현장 후불/u);
   assert.match(noticePage, /현장 카드 결제 가능/u);
-  assert.match(noticePage, /0508-202-3906/u);
+  assert.match(noticePage, /TODAKI_PHONE\.display/u);
   assert.doesNotMatch(noticePage, /\b20\d{2}[-./]\d{1,2}[-./]\d{1,2}\b/u);
   assert.doesNotMatch(noticePage, /후기|평점|도착\s*시간|배정|관리사|경력|효능/u);
   assert.match(sitemap, /"\/notice"/u);

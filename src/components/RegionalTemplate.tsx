@@ -11,6 +11,7 @@ import {
   getImageHeaderStyle,
   getRegionalHeroImage,
 } from "@/src/data/image-release";
+import { TODAKI_PHONE } from "@/src/data/phone";
 
 import styles from "./RegionalTemplate.module.css";
 
@@ -51,7 +52,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
           <div className={styles.headerLinks}>
             <Link className={styles.headerNotice} href="/notice">공지사항</Link>
             <Link className={styles.headerBlog} href="/blog">블로그</Link>
-            <a className={styles.headerCall} href={OPERATING_FACTS.phone.href}>전화상담 <span aria-hidden="true">↗</span></a>
+            <a className={styles.headerCall} href={TODAKI_PHONE.href}>전화상담 <span aria-hidden="true">↗</span></a>
           </div>
         </header>
 
@@ -82,7 +83,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
             <p className={styles.kicker}>{content.hero.eyebrow}</p>
             <h1 id="region-title">{renderHeroTitle(content.h1)}</h1>
             <div className={styles.heroActions}>
-              <a className={styles.primaryButton} href={OPERATING_FACTS.phone.href}>전화상담 <span aria-hidden="true">↗</span></a>
+              <a className={styles.primaryButton} href={TODAKI_PHONE.href}>전화상담 <span aria-hidden="true">↗</span></a>
               <a className={styles.secondaryButton} href="#price">코스·가격 보기 <span aria-hidden="true">↓</span></a>
             </div>
             <dl className={styles.facts}>
@@ -217,7 +218,7 @@ export function RegionalTemplate({ region, content, childRegions, nearby }: Regi
             <h2 id="callout-title">주소와 시간을 확인한 뒤 전화상담으로 이어가세요.</h2>
             <p>{OPERATING_FACTS.phoneConsultation} · {OPERATING_FACTS.paymentTiming} · {OPERATING_FACTS.cardPayment}</p>
           </div>
-          <a className={styles.calloutButton} href={OPERATING_FACTS.phone.href}>전화상담 <span aria-hidden="true">↗</span></a>
+          <a className={styles.calloutButton} href={TODAKI_PHONE.href}>전화상담 <span aria-hidden="true">↗</span></a>
         </section>
       </div>
     </main>

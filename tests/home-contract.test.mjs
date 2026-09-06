@@ -30,7 +30,7 @@ test("Callme Todaki home carries the approved operating slice", async () => {
   assert.match(page, /robots: \{ index: true, follow: true \}/);
   assert.match(page, /alternates: \{ canonical: "\/" \}/);
   assert.match(page, /수도권·충청권/);
-  assert.match(page, /0508-202-3906/);
+  assert.match(page, /TODAKI_PHONE\.display/);
   assert.match(page, /24시간 전화상담/);
   assert.match(page, /선입금 없는 현장 후불/);
   assert.match(page, /현장 카드 결제/);

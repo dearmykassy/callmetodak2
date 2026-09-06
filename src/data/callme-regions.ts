@@ -40,7 +40,7 @@ export type RegionContent = {
 };
 
 export type OperatingFacts = {
-  phone: { display: string; href: string };
+  phone: { display: string; href: string; schema: string };
   phoneConsultation: string;
   paymentTiming: string;
   cardPayment: string;

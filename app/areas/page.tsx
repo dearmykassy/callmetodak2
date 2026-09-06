@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/src/components/SiteLink";
+import { TODAKI_PHONE } from "@/src/data/phone";
 
 import styles from "../fixed-page.module.css";
 
@@ -60,7 +61,7 @@ export default function AreasPage() {
               <strong>상위 지역에서 연결 지역을 확인하세요.</strong>
               <p>각 지역 페이지 하단 카드에서 요청하신 세부 지역으로 이동할 수 있습니다. 정확한 서비스 주소와 희망 시간은 전화상담에서 확인해 주세요.</p>
             </div>
-            <a className={styles.cta} href="tel:05082023906">전화로 지역 확인하기</a>
+            <a className={styles.cta} href={TODAKI_PHONE.href}>전화로 지역 확인하기</a>
           </section>
         </div>
       </div>
