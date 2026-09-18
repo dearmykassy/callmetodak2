@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   keywords: HOME_METADATA_KEYWORDS,
   verification: {
     other: {
-      "naver-site-verification": "3a4db75d94cb08f1d98528d7010d5485713a6b0e",
+      "naver-site-verification": "14484552109b7e2d7658ed9166d935922b3d48cb",
     },
   },
   openGraph: {
