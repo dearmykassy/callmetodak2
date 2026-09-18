@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   description: "서울·인천·경기·충청권·부산 지역별 여성전용출장마사지 안내. 코스와 가격, 24시간 전화상담 기준을 콜미토닥이에서 확인하세요.",
   keywords: HOME_METADATA_KEYWORDS,
   verification: {
+    google: "l4u4Iz3K97ZANG2L-FA2rUvxNTGCW33GtcMKq-bw9e0",
     other: {
       "naver-site-verification": "14484552109b7e2d7658ed9166d935922b3d48cb",
     },
